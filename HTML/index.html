@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link href="/CSS/css.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <title>Top Gun</title>
+</head>
+
+<body>
+<div class="container">
+    <header class="page-header">
+        <h1 class="page-title">
+            <ion-icon name="airplane-outline"></ion-icon>&nbsp;Top Gun&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+        </h1>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Game</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="map">
+            <img src="/img/finland.svg" alt="map of finland">
+        </div>
+        <div class="boxes">
+            <section class="box">
+                <header>
+                    <h2>Game Status</h2>
+                </header>
+                <table>
+                    <tr>
+                        <td colspan="2">Player Name</td>
+                    </tr>
+                    <tr>
+                        <td>CO2 Consumed: <span id="consumed">0</span>kg</td>
+                        <td>CO2 Budget: <span id="budget">1000</span>kg</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="box">
+                <header>
+                    <h2 id="airport-name">Airport name</h2>
+                </header>
+                <table>
+                    <tr>
+                        <td>Temperature</td>
+                        <td>
+                            <img id="weather-icon" src="https://openweathermap.org/img/wn/10d@2x.png" alt="current weather">
+                        </td>
+                        <td>Wind</td>
+                    </tr>
+                    <tr>
+                        <td id="airport-temp">10°C</td>
+                        <td id="airport-condition">Cloudy</td>
+                        <td id="airport-wind">40m/s</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="box">
+                <header>
+                    <h2>Goals</h2>
+                </header>
+                <ul id="goals">
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
+                            <figcaption>Temperature over +25°C</figcaption>
+                        </figure>
+                    </li>
+                </ul>
+
+            </section>
+        </div>
+    </main>
+    <footer class="page-footer">
+        <p>We made this!</p>
+    </footer>
+    <div class="goal">
+        <h2>Gooooal!</h2>
+        <p>
+            <span id="goal-txt">Goals reached!</span>
+        </p>
+    </div>
+</div>
+
+<div id="player-model">
+    <form id="player-form">
+        <input type="text" placeholder="Player name" required>
+        <input type="submit" value="Start game">
+    </form>
+</div>
+
+</body>
+
+</html>
