@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="/js/main.js" defer></script>
     <title>Top Gun</title>
 </head>
 
@@ -22,20 +22,20 @@
         </h1>
 
         <nav>
-            <ul>
+            <ul class="flex-wrap space-evenly">
                 <li>
-                    <a href="index.html">Game</a>
+                    <a class="button button-white" href="index.html">Game</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a class="button button-white" href="about.html">About</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="flex-wrap">
         <div id="map">
-            <img src="/img/finland.svg" alt="map of finland">
+            <!--<img src="/img/finland.svg" alt="map of finland"> -->
         </div>
         <div class="boxes">
             <section class="box">
@@ -75,7 +75,7 @@
                 <header>
                     <h2>Goals</h2>
                 </header>
-                <ul id="goals">
+                <ul id="goals" class="flex-wrap">
                     <li>
                         <figure>
                             <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
@@ -106,7 +106,7 @@
                             <figcaption>Temperature over +25°C</figcaption>
                         </figure>
                     </li>
-                    <li>
+                    <li class="done">
                         <figure>
                             <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Goal weather icon">
                             <figcaption>Temperature over +25°C</figcaption>
