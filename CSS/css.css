@@ -1,4 +1,3 @@
-/* variables */
 :root {
     --black:rgb(23, 23, 23);
     --white:rgb(248, 246, 246);
@@ -8,21 +7,6 @@
 }
 
 /* utilities */
-
-.button {
-    position: relative;
-    display: inline-block;
-    padding: 25px 30px;
-
-}
-.button-white {
-    background-color: var(--white);
-    color: var(--black);
-}
-
-.button:hover {
-    transform: scale(1.1);
-}
 
 .flex-wrap {
     display: flex;
@@ -51,7 +35,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family:'edge-of-the-galaxy', sans-serif;
     background-color: var(--white);
 }
 
@@ -208,5 +192,141 @@ main {
         padding-left: 1rem;
         box-sizing: border-box;
     }
+}
+
+.button {
+    cursor: pointer;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.dialog-header h1 {
+    margin: 0;
+}
+
+.dialog-header button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.dialog-content {
+    padding: 20px;
+}
+
+.dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    z-index: 1000;
+    display: none;
+}
+
+.dialog.show {
+    display: block;
+}
+
+h1, nav {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    margin: 0;
+  }
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  nav button {
+      margin-left: 10px; /* Lisätään väliä nappien välille */
+    display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #1a1a1a; /* Dark Gray */
+  color: whitesmoke; /* Light Blue */
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'edge-of-the-galaxy', sans-serif;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-out, box-shadow 0.3s, color 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  outline: none;
+  border: 2px solid transparent; /* Transparent border */
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all 0.6s ease-out;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.button:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.button:hover {
+  color: white; /* Dark Gray */
+  background-color: rgba(136,11,255,0.48); /* Light Blue */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Special Effect for About, Game, and Help Buttons */
+.about:hover,
+.game:hover,
+.help:hover {
+  animation: float 2s infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
