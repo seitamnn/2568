@@ -10,12 +10,10 @@
 /* utilities */
 
 .button {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 4px;
-    text-align: center;
-    transition: all;
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+
 }
 .button-white {
     background-color: var(--white);
@@ -62,13 +60,16 @@ html, body {
     position: relative;
 }
 
-.page-header, .page-footer {
+.page-header {
     background-color: var(--black);
     color: var(--white);
     padding: 1rem;
 }
 
 .page-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
     text-align: center;
 }
 
