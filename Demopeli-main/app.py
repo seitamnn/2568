@@ -13,8 +13,9 @@ load_dotenv()
 
 app = Flask(__name__)
 # lisätty cors
-cors = CORS(app)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = ()
+CORS(app)
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Tietokantayhteys
 config.conn = mysql.connector.connect(
