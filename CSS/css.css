@@ -124,18 +124,18 @@ main {
     overflow-wrap: break-word;
 }
 
-/*.goal {*/
-/*    background-image:url("../img/splatter.png");*/
-/*    background-size:contain;*/
-/*    background-repeat: no-repeat;*/
-/*    padding: 9rem 7rem;*/
-/*    text-align:center;*/
-/*    position: absolute;*/
-/*    bottom: 30%;*/
-/*    filter: drop-shadow(0 0 3px #333);*/
-/*    transform: rotate(340deg);*/
-/*    line-height: 1rem;*/
-/*}*/
+.goal {
+    background-image:url("../img/splatter.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    padding: 9rem 7rem;
+    text-align:center;
+    position: absolute;
+    bottom: 30%;
+    filter: drop-shadow(0 0 3px #333);
+    transform: rotate(340deg);
+    line-height: 1rem;
+}
 
 .goal h2, .goal p {
     margin: 0.5rem;
@@ -296,3 +296,38 @@ header {
   }
 }
 
+.help-header {
+    padding-left: 40rem;
+    color: white;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+.help-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+
+.about-header {
+    padding-left: 40rem;
+    color: white;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+.about-footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+}
+
+
+.cha-header {
+    padding-left: 37rem;
+    color: white;
+    background-color: #0a0a0a;
+    text-align: center;
+}
