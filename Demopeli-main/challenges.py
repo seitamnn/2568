@@ -1,4 +1,5 @@
 # tähän challenget jeejee
+import json
 class Challenge:
     def __init__(self, challengeTitle, question, answer ,rightAnswerText, wrongAnswerText):
         self.challengeTitle = challengeTitle
@@ -44,5 +45,3 @@ challenges = [
               'Complete makeover done and Wow! You look like a completely different person! You get 2 distance steps.',
               'No? I\'m not sure if that will help you...')
 ]
-
-def pickChallenge
