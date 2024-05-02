@@ -14,9 +14,12 @@ body {
 }
 
 #player-model {
-    background-color: rgba(72, 62, 62, 0.7);
+    background-color: rgba(97, 44, 133, 0.7);
     padding: 20px;
     border-radius: 10px;
+    margin-top: 100px;
+    outline: 2px solid transparent;
+    box-shadow: 0 0 0 2px #fff, 0 0 10px 4px rgba(255, 255, 255, 0.5);
 }
 
 #player-form input[type="text"] {
@@ -25,13 +28,13 @@ body {
     border: 1px solid #3f3535;
     border-radius: 5px;
     margin-right: 10px;
-    background-color: #191e1f; /* Taustaväri */
+    background-color: #191e1f;
     color: lightgray;
 }
 
 #player-form input[type="submit"] {
     padding: 10px 20px;
-    background-color: #c2081f;
+    background-color: #7a0d21;
     color: lightgray;
     border: none;
     border-radius: 5px;
@@ -39,5 +42,33 @@ body {
 }
 
 #player-form input[type="submit"]:hover {
-    background-color: #7a0d21;
+    background-color: #812b3b;
 }
+
+.title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gradient-text {
+    font-size: 10rem;
+    background: linear-gradient(to bottom, #430559, #dd32ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+.gradient-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+
+
