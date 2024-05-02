@@ -17,7 +17,7 @@ body {
     background-color: rgba(97, 44, 133, 0.7);
     padding: 20px;
     border-radius: 10px;
-    margin-top: 100px;
+    margin-top: 120px;
     outline: 2px solid transparent;
     box-shadow: 0 0 0 2px #fff, 0 0 10px 4px rgba(255, 255, 255, 0.5);
 }
@@ -30,6 +30,7 @@ body {
     margin-right: 10px;
     background-color: #191e1f;
     color: lightgray;
+    margin-top: 5px;
 }
 
 #player-form input[type="submit"] {
@@ -39,6 +40,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-bottom: 5px;
 }
 
 #player-form input[type="submit"]:hover {
