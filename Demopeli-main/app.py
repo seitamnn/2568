@@ -40,6 +40,31 @@ def fly(id, dest, consumption=0, player=None):
     json_data = json.dumps(game, default=lambda o: o.__dict__, indent=4)
     return json_data
 
+def select_airport():
+    sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name != 'Norway'"
+    cursor = config.conn.cursor()
+    cursor.execute(sql)
+    airports = cursor.fetchall()
+    three_airports = random.sample(airports, 3)
+    airport_choices = [
+        {"airport_name": three_airports[0][0],
+         "country_name": three_airports[0][3],
+         "longitude": three_airports[0][2],
+         "latitude": three_airports[0][1]
+         },
+        {"airport_name": three_airports[1][0],
+         "country_name": three_airports[1][3],
+         "longitude": three_airports[1][2],
+         "latitude": three_airports[1][1]
+         },
+        {"airport_name": three_airports[2][0],
+         "country_name": three_airports[2][3],
+         "longitude": three_airports[2][2],
+         "latitude": three_airports[2][1]
+         }
+    ]
+    return airport_choices
+
 
 # http://127.0.0.1:5000/flyto?game=fEC7n0loeL95awIxgY7M&dest=EFHK&consumption=123
 @app.route('/flyto')
@@ -63,52 +88,30 @@ def newgame():
     return json_data
 
 
-@app.route('/player_info/<screen_name>/')
+@app.route('/player_info/<screen_name>/') #blabla
 def user_currency_distance(screen_name):
-    try:
-        sql = (f"SELECT currency, alien_distance, location, in_possession FROM game WHERE screen_name = '{screen_name}'")
-        cursor = config.conn.cursor()
-        cursor.execute(sql)
-        userdata = cursor.fetchall()
-        status_code = 200
-        player_info = {
-            "currency": userdata[0][0],
-            "alien_distance": userdata[0][1],
-            "location": userdata[0][2],
-            "in_possession": userdata[0][3]
-        }
-    except ValueError:
-        status_code = 400
-        player_info = {
-            "status": status_code,
-            "message": "Invalid input"
-        }
-
-    json_response = json.dumps(player_info)
-    return Response(response=json_response, status=status_code, mimetype='application/json')
-
-@app.route('/select_airport/')
-def select_airport():
-    try:
-        sql = f"SELECT airport.name, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name != 'Norway'"
-        cursor = config.conn.cursor()
-        cursor.execute(sql)
-        airports = cursor.fetchall()
-        three_airports = random.sample(airports, 3)
-        status_code = 200
-        airport_choices = {
-            "airport1": [three_airports[0][0], three_airports[0][1]],
-            "airport2": [three_airports[1][0], three_airports[1][1]],
-            "airport3": [three_airports[2][0], three_airports[2][1]]
-        }
-    except ValueError:
-        status_code = 400
-        airport_choices = {
-            "status_code": status_code,
-            "message": "Invalid input"
-        }
-    json_response = json.dumps(airport_choices)
-    return Response(response=json_response, status=status_code, mimetype='application/json')
+    sql = (f"SELECT screen_name, currency, alien_distance, location, in_possession FROM game WHERE screen_name = '{screen_name}'")
+    cursor = config.conn.cursor()
+    cursor.execute(sql)
+    userdata = cursor.fetchall()
+    player_info = {
+        "screen_name": userdata[0][0],
+        "currency": userdata[0][1],
+        "alien_distance": userdata[0][2],
+        "location": userdata[0][3],
+        "in_possession": userdata[0][4]
+    }
+    sql2 = (f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE ident='{userdata[0][3]}'")
+    cursor.execute(sql2)
+    current_airport = cursor.fetchall()
+    player_location = {
+        "airport_name": current_airport[0][0],
+        "airport_latitude": current_airport[0][1],
+        "airport_longitude": current_airport[0][2],
+        "country_name": current_airport[0][3]
+    }
+    status = {"playerInfo": player_info, "airport": select_airport(), "currentLocation": player_location}
+    return status
 
 
 @app.route('/select_norway/')

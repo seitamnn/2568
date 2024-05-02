@@ -332,3 +332,17 @@ header {
     background-color: #0a0a0a;
     text-align: center;
 }
+
+/* Leaflet icons */
+.red-icon {
+    background-color: crimson;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.green-icon {
+    background-color: #27ba35;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+}
+/*bla bla */

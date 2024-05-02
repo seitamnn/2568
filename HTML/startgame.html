@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #player-model {
+            margin-bottom: 20px;
+        }
+        #player-form input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        #player-form input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #player-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to our Game!</h1>
+    <div id="player-model">
+        <form id="player-form" action="koeiluja.html"> <!-- Tähän voit vaihtaa "game.html" haluamaasi pelisivun tiedostoon -->
+            <input type="text" name="playerName" placeholder="Player name" required>
+            <input type="submit" value="Start game">
+        </form>
+    </div>
+</body>
+</html>
