@@ -1,12 +1,20 @@
 # tähän challenget jeejee
 import json
 class Challenge:
-    def __init__(self, challengeTitle, question, answer ,rightAnswerText, wrongAnswerText):
+    def __init__(self, challengeTitle, question, option ,option1AnswerText, option2AnswerText):
         self.challengeTitle = challengeTitle
         self.question = question
-        self.answer = answer
-        self.rightAnswerText = rightAnswerText
-        self.wrongAnswerText = wrongAnswerText
+        self.option = option
+        self.optionAnswer1Text = option1AnswerText
+        self.optionAnswer2Text = option2AnswerText
+
+class multipleAnswerChallenge(Challenge):
+    pass
+
+class singleAnswerChallenge(Challenge):
+    pass
+
+
 
 challenges = [
     Challenge('You are in your own thoughts when accidentally bump into strange looking world traveler at the airport. He asks for your help with the currency conversion and you decide to help him. Let\'s see what kind of problem he has.',
