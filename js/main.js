@@ -77,3 +77,4 @@ async function gameSetup() {
 }
 gameSetup();
 // event listener to hide goal splash
+//blablaa
