@@ -88,7 +88,7 @@ def newgame():
     return json_data
 
 
-@app.route('/player_info/<screen_name>/')
+@app.route('/player_info/<screen_name>/') #blabla
 def user_currency_distance(screen_name):
     sql = (f"SELECT screen_name, currency, alien_distance, location, in_possession FROM game WHERE screen_name = '{screen_name}'")
     cursor = config.conn.cursor()
