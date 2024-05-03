@@ -157,7 +157,7 @@ def select_airport_norway():
     return Response(response=json_response, status=status_code, mimetype='application/json')
 
 
-@app.route('/select_cuba/') # ei vielä käytössä
+@app.route('/select_cuba/') # ei vielä käytössä ei ole ei
 def select_airport_cuba():
     try:
         sql = f"SELECT airport.name, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Cuba'"

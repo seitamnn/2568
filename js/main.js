@@ -99,6 +99,7 @@ gameSetup(`http://127.0.0.1:5000/player_info/nipsu`) //kutsutaan pääfunktiota 
 
 // event listener to hide goal splash
 //blablaa
+//saakeli että menee hermot nyt kyllä kuulkaa
 
 //http://127.0.0.1:5000/newgame?player=Vesa&loc=EFHK
 //'http://127.0.0.1:5000/player_info/Pumba/'
