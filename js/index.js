@@ -55,7 +55,7 @@ closeHelpBtn.addEventListener('click', () => helpDialog.close());
 //function playGame() {
         // lisää JavaScript-koodi pelin käynnistämiseksi
         // kutsutaan pelin aloitusfunktiota
-}
+
     // Etsi painike DOM:sta
 //const playButton = document.getElementById('playButton');
     // Liitä tapahtumankäsittelijä painikkeelle
