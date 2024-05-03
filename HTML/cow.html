@@ -5,32 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
+    <link href="../CSS/cow.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
+    <script src="../js/cow.js" defer></script>
     <title>Cow</title>
 </head>
 
 <body>
-<div class="container-cow">
-    <header class="cow-header">
-        <h1 class="cow-title">
-            <ion-icon name="airplane-outline"></ion-icon>&nbsp;Cow&nbsp;<ion-icon name="airplane-outline"></ion-icon>
-        </h1>
-    </header>
-
-    <main>
-        <header>
-            <h1>something here</h1>
+    <div class="container-cow">
+        <header class="cow-header">
+            <h1 class="cow-title">
+                <ion-icon name="airplane-outline"></ion-icon>&nbsp;Tauno the cow&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+            </h1>
         </header>
 
-    </main>
-    <footer class="cow-footer">
-        <p>We made this!</p>
-    </footer>
+        <section class="box">
+            <p>When the aliens arrived at Earth, they conducted scientific experiments on animals. One of these test subjects was a cow named Tauno.
+                The alien experiments inadvertently altered Tauno, granting it the ability to teleport from one place to another.
+                Thanks to its newfound abilities, Tauno managed to escape from the aliens, and no one has been able to catch it since.
+                However, the aliens had installed a tracker on Tauno, and by following its signal, you can see Tauno's current location.
+                You can try pressing the tracker button below to see where Tauno is right now. Oh and remember that Tauno is a cow,
+                so he may sometimes teleport in the most unusual places...for example, in the middle of the sea...</p>
+        </section>
 
-</div>
+        <main class="flex-wrap">
+            <div id="map"></div>
+            <div class="boxes">
+                <section class="box">
+                    <header>
+                        <h2>Find Tauno</h2>
+                    </header>
+                    <table>
+                        <tr>
+                            <td colspan="2" class="button" id="find-cow-button">Press to track Tauno</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="box">
+                    <header>
+                        <h2>Tauno's whereabouts</h2>
+                    </header>
+                    <table id="cow-info-table">
+                        <tr>
+                            <td colspan="2">You haven't track Tauno jet</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </main>
+        <footer class="cow-footer">
+            <p>We made this!</p>
+        </footer>
+    </div>
+
 </body>
 
 </html>
