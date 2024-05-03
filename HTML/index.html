@@ -10,17 +10,17 @@
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
-    <script src="/js/main.js" defer></script>
-    <title>2586</title>
+    <script src="../js/index.js" defer></script>
+    <title>Top Gun</title>
 </head>
 
 <body>
 <div class="container">
     <header class="page-header">
     <div class="logo-container">
-        <button id="cowBtn" class="logo-button">
+        <button class="logo-button">
             <a href="cow.html">
-                <img src="/img/sci-fi.png" alt="cow" class="logo">
+                <img src="../img/sci-fi.png" alt="cow" class="logo">
             </a>
         </button>
     </div>
@@ -30,7 +30,7 @@
     <nav>
         <ul class="flex-wrap space-evenly">
             <li>
-                <button class="button button-white" id="gameBtn">Game</button>
+                <button id="PlayButton">Play</button>
             </li>
             <li>
                 <button class="button button-white" id="aboutBtn">About</button>
@@ -48,16 +48,6 @@
             <button id="closeCowBtn">&times;</button>
         </header>
         <section id="cowContent">
-            <!-- Content here -->
-        </section>
-    </dialog>
-
-    <dialog id="gameDialog">
-        <header>
-            <h1>Game</h1>
-            <button id="closeGameBtn">&times;</button>
-        </header>
-        <section id="gameContent">
             <!-- Content here -->
         </section>
     </dialog>
@@ -93,7 +83,7 @@
                 </header>
                 <table>
                     <tr>
-                        <td colspan="2"><span id="player-name">Player Name</span> <span id="achievement">❌</span></td>
+                        <td colspan="2">Player Name <span id="achievement">❌</span></td>
                     </tr>
                     <tr>
                         <td>Currency: <span id="currency">100</span> $</td>
@@ -131,89 +121,6 @@
         <p>We made this!</p>
     </footer>
 </div>
-
-<div id="player-model">
-    <form id="player-form">
-        <input type="text" placeholder="Player name" required>
-        <input type="submit" value="Start game">
-    </form>
-</div>
-
-<script>
-  const cowBtn = document.getElementById('cowBtn');
-  const cowDialog = document.getElementById('cowDialog');
-  const closeCowBtn = document.getElementById('closeCowBtn');
-  cowBtn.addEventListener('click', async () => {
-    const response = await fetch('cow.html');
-    const content = await response.text();
-    document.getElementById('cowContent').innerHTML = content;
-    cowDialog.showModal();
-  });
-  closeCowBtn.addEventListener('click', () => cowDialog.close());
-
-  const gameBtn = document.getElementById('gameBtn');
-  const gameDialog = document.getElementById('gameDialog');
-  const closeGameBtn = document.getElementById('closeGameBtn');
-  gameBtn.addEventListener('click', async () => {
-    const response = await fetch('game.html');
-    const content = await response.text();
-    document.getElementById('gameContent').innerHTML = content;
-    gameDialog.showModal();
-  });
-  closeGameBtn.addEventListener('click', () => gameDialog.close());
-
-  const aboutBtn = document.getElementById('aboutBtn');
-  const aboutDialog = document.getElementById('aboutDialog');
-  const closeAboutBtn = document.getElementById('closeAboutBtn');
-  aboutBtn.addEventListener('click', async () => {
-    const response = await fetch('about.html');
-    const content = await response.text();
-    document.getElementById('aboutContent').innerHTML = content;
-    aboutDialog.showModal();
-  });
-  closeAboutBtn.addEventListener('click', () => aboutDialog.close());
-
-  const helpBtn = document.getElementById('helpBtn');
-  const helpDialog = document.getElementById('helpDialog');
-  const closeHelpBtn = document.getElementById('closeHelpBtn');
-  helpBtn.addEventListener('click', async () => {
-    const response = await fetch('help.html');
-    const content = await response.text();
-    document.getElementById('helpContent').innerHTML = content;
-    helpDialog.showModal();
-  });
-  closeHelpBtn.addEventListener('click', () => helpDialog.close());
-
-
-  // prkl kuvake muuttuu kun ainesosa haettu
-  let ingredient = 0; // Ainesosa ei hallussa
-  const achievement = document.getElementById("achievement");
-
-  function getIngredient() {
-    ingredient = 1; // Ainesosa hallussa
-    achievement.innerText = "🧪"; // Merkki muuttuu ainesosan saamisen myötä
-}
-  getIngredient();
-
-
-  const gameBtn2 = document.getElementById('gameBtn');
-  const playerModel = document.getElementById('player-model');
-
-  gameBtn2.addEventListener('click', function() {
-    playerModel.style.display = 'block';
-});
-
-
-  const playerForm = document.getElementById('player-form');
-
-  playerForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const playerName = playerForm.querySelector('input[type="text"]').value;
-    playerModel.style.display = 'none';
-});
-
-
-</script>
 
 </body>
 
