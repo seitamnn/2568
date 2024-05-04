@@ -1,10 +1,11 @@
-.app{;
+.app{
     background: #f0f0f0;
     width: 88%;
     max-width: 600px;
     margin: 10px auto 0;
     border-radius: 10px;
-    padding: 30px;
+    padding: 20px;
+    /* display: none; */
 }
 .app h2{
     font-size: 25px;
