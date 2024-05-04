@@ -1,38 +1,29 @@
 const questions = [
   {
-    question: "What do cats say?",
+    question: "What is the chemical symbol of iron?",
     answers: [
-      { text: "Moo", correct: false},
-      { text: "Bark", correct: false},
-      { text: "Meow", correct: true},
-      { text: "Yeehaw", correct: false},
+      { text: "I", correct: false},
+      { text: "Ir", correct: false},
+      { text: "Fe", correct: true},
+      { text: "F", correct: false},
     ]
   },
   {
-    question: "What do dogs say?",
+    question: "What is the chemical symbol of gold?",
     answers: [
-      { text: "Moo", correct: false},
-      { text: "Woof", correct: true},
-      { text: "Meow", correct: false},
-      { text: "Yeehaw", correct: false},
+      { text: "Ar", correct: false},
+      { text: "Au", correct: true},
+      { text: "Gd", correct: false},
+      { text: "G", correct: false},
     ]
   },
   {
-    question: "What do cows say?",
+    question: "What is the chemical symbol of nitrogen?",
     answers: [
-      { text: "Moo", correct: true},
-      { text: "Bark", correct: false},
-      { text: "Meow", correct: false},
-      { text: "Yeehaw", correct: false},
-    ]
-  },
-  {
-    question: "What do cowboys say?",
-    answers: [
-      { text: "Moo", correct: false},
-      { text: "Bark", correct: false},
-      { text: "Meow", correct: false},
-      { text: "Yeehaw", correct: true},
+      { text: "N", correct: true},
+      { text: "Ni", correct: false},
+      { text: "Na", correct: false},
+      { text: "Ne", correct: false},
     ]
   }
 ];
@@ -54,7 +45,8 @@ function startQuiz(){
 function showQuestion(){
   resetState();
   let currentQuestion = questions[currentQuestionIndex];
-  questionElement.innerHTML = currentQuestion.question;
+  let questionNo = currentQuestionIndex + 1;
+  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
   currentQuestion.answers.forEach(answer => {
     const button = document.createElement(("button"));
