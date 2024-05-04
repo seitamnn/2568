@@ -1,9 +1,4 @@
-:root {
-    --black: rgb(2, 14, 0);
-    --white: rgb(248, 246, 246);
-    --grey: rgb(128, 128, 128);
-    --dark-grey: rgb(57, 57, 57);
-}
+
 
 .flex-wrap {
     display: flex;
@@ -33,28 +28,25 @@ html, body {
     height: 100%;
     font-family: "Oxanium", sans-serif;
     font-style: normal;
-    background-color: white;
 }
 
 .container-cow {
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--white);
+    background-color:whitesmoke;
     height: 100%;
 }
 
 .cow-header {
     display: flex;
-    background-color: #0a0a0a;
-    color: var(--white);
+    background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     justify-content: center;
     align-items: center;
 }
 
 .cow-footer {
-    background-color: #0a0a0a;
-    color: var(--white);
+    background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     text-align: center;
 }
@@ -95,7 +87,7 @@ main {
     border-radius: 6px;
     box-shadow:rgba(0,0,0,0.3)3px 3px 10px;
     margin-bottom: 1rem;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 .box h2,
@@ -161,11 +153,12 @@ main {
 
 .button {
     cursor: pointer;
-    background-color: rgba(172, 104, 236, 0.71);
+    background-color: whitesmoke;
 }
 
 header {
-    background-color: rgba(0,0,0,0.3);
+    background-color: gray ;
+    color: whitesmoke;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -175,5 +168,5 @@ header {
 h1 {
     margin: 0;
     font-size: 1.5rem;
-    color: lightgray;
+    color: whitesmoke;
 }

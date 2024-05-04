@@ -3,20 +3,6 @@
     src: url("Oxanium.ttf") format("truetype");
 }
 
-.container {
-    font-family: "Oxanium", sans-serif;
-    font-style: normal;
-
-}
-:root {
-    --black:rgb(23, 23, 23);
-    --white:rgb(248, 246, 246);
-    --grey:rgb(128, 128, 128);
-    --dark-grey:rgb(57, 57, 57);
-}
-
-/* utilities */
-
 .flex-wrap {
     display: flex;
     height: 100%;
@@ -30,17 +16,16 @@
     float: left;
 }
 
-/* app */
-
-
 body {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background: linear-gradient(to bottom, rgb(7, 7, 7), #b7b7b7);
     height: auto;
 }
 
 .container {
+    font-family: "Oxanium", sans-serif;
+    font-style: normal;
     width: 100%;
     position: relative;
 }
@@ -57,25 +42,28 @@ body {
 }
 
 .page-header {
-    background-color: black;
-    color: var(--white);
+    background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 0;
     height: fit-content;
-}
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-.page-footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem;
-    text-align: center;
 }
 
 .page-title {
     margin: 0;
     text-align: center;
+    font-size: xxx-large;
+    color: whitesmoke;
     padding-left: 13rem;
-
 }
+
+.page-footer {
+    background: linear-gradient(to bottom, #430559, #dd32ef);
+    padding: 1rem;
+    text-align: center;
+    color: whitesmoke;
+}
+
 .ion-icon {
     vertical-align: middle;
 }
@@ -89,11 +77,6 @@ main {
     padding: 1rem 7rem;
     height: 100%;
 }
-#map {
-    width: 40%;
-    height: auto;
-    overflow: hidden;
-}
 
 .boxes {
     width: 60%;
@@ -104,25 +87,28 @@ main {
     font-size: x-small;
 }
 
-#map, box {
-    border-radius: 6px;
+#map {
+    border-radius: 20px;
     box-shadow: rgba(0,0,0,0.3) 3px 3px 10px;
     margin-bottom: 1rem;
     height: 90%;
+    width: 40%;
+    overflow: hidden;
 }
 
 .box table {
     width: 100%;
     text-align: center;
-    border: var(--grey) solid 1px;
-    border-radius: 4px;
+    background-color: white;
+    border: whitesmoke solid 1px;
+    border-radius: 2px;
 }
 
 .box li {
     width: calc(50% - 0.6rem);
     text-align: center;
-    border: var(--grey) solid 1px;
-    border-radius: 4px;
+    border: whitesmoke solid 1px;
+    border-radius: 2px;
     box-sizing: border-box;
     padding:0.3rem;
     margin: 0.3rem;
@@ -165,9 +151,8 @@ main {
     padding: 1rem;
 }
 
-
 #weather td:first-child, #weather td:nth-child(2) {
-    border-right: var(--grey) 1px solid;
+    border-right: gray 1px solid;
 }
 
 
@@ -191,7 +176,7 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
-    background-color: #f0f0f0;
+    background: linear-gradient(to bottom, #430559, #dd32ef);
     border-bottom: 1px solid #0a0a0a;
 }
 
@@ -227,18 +212,17 @@ header {
   }
 
   nav {
-    background-color:black;
+    background: linear-gradient(to bottom, #430559, #dd32ef);
     color: #fff;
     padding: 10px;
   }
 
   nav button {
-  margin-left: 10px; /* Lisätään väliä nappien välille */
   display: inline-block;
   padding: 10px 20px;
   border-radius: 30px;
-  background-color: #1a1a1a; /* Dark Gray */
-  color: whitesmoke; /* Light Blue */
+  background-color: #2a2929;
+  color: whitesmoke;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
@@ -278,7 +262,7 @@ header {
 
 .button:hover {
   color: white; /* Dark Gray */
-  background-color: rgba(127, 21, 227, 0.71);
+  background-color: #9c22a9;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
@@ -302,35 +286,6 @@ header {
   }
 }
 
-.help-header {
-    padding-left: 40rem;
-    color: white;
-    background-color: #0a0a0a;
-    text-align: center;
-}
-
-.help-footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem;
-    text-align: center;
-}
-
-
-.about-footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 1rem;
-    text-align: center;
-}
-
-
-.cha-header {
-    padding-left: 37rem;
-    color: white;
-    background-color: #0a0a0a;
-    text-align: center;
-}
 
 /* Leaflet icons */
 .red-icon {

@@ -25,7 +25,7 @@
         </button>
     </div>
     <h1 class="page-title">
-        <ion-icon name="airplane-outline"></ion-icon>&nbsp;2586&nbsp;<ion-icon name="airplane-outline"></ion-icon>
+        2586
     </h1>
     <nav>
         <ul class="flex-wrap space-evenly">
@@ -128,13 +128,13 @@
         </div>
     </main>
     <footer class="page-footer">
-        <p>We made this!</p>
+        <p>Made by Sofia, Rosa, Miia & Anni</p>
     </footer>
 </div>
 
 <div id="player-model">
     <form id="player-form">
-        <input id="player-input" type="text" placeholder="Player name" required>
+        <input type="text" placeholder="Player name" required>
         <input type="submit" value="Start game">
     </form>
 </div>
@@ -204,13 +204,13 @@
 });
 
 
-  //const playerForm = document.getElementById('player-form');
+  const playerForm = document.getElementById('player-form');
 
-  //playerForm.addEventListener('submit', function(event) {
-    //event.preventDefault();
-  //  const playerName = playerForm.querySelector('input[type="text"]').value;
-   // playerModel.style.display = 'none';
-//});
+  playerForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const playerName = playerForm.querySelector('input[type="text"]').value;
+    playerModel.style.display = 'none';
+});
 
 
 </script>
