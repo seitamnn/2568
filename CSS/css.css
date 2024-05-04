@@ -1,5 +1,13 @@
 /* variables */
+@font-face {
+    src: url("Oxanium.ttf") format("truetype");
+}
 
+.container {
+    font-family: "Oxanium", sans-serif;
+    font-style: normal;
+
+}
 :root {
     --black:rgb(23, 23, 23);
     --white:rgb(248, 246, 246);
@@ -24,10 +32,6 @@
 
 /* app */
 
-
-html {
-    font-family: Arial, cursive;
-}
 
 body {
     margin: 0;
@@ -188,7 +192,7 @@ main {
     align-items: center;
     padding: 10px 10px;
     background-color: #f0f0f0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #0a0a0a;
 }
 
 .dialog-header h1 {
@@ -238,7 +242,8 @@ header {
   text-align: center;
   text-decoration: none;
   font-size: 18px;
-  font-family: 'Jersey15', sans-serif;
+  font-family: "Oxanium", sans-serif;
+  font-style: normal;
   margin: 10px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s ease-out, box-shadow 0.3s, color 0.3s;
@@ -311,12 +316,6 @@ header {
     text-align: center;
 }
 
-.about-header {
-    padding-left: 40rem;
-    color: white;
-    background-color: #0a0a0a;
-    text-align: center;
-}
 
 .about-footer {
     background-color: var(--black);
