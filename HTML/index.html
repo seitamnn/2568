@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"/>
     <link href="/CSS/css.css" rel="stylesheet">
+    <link href="/CSS/challenge.css" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
     <script src="/js/main.js" defer></script>
+    <script src="/js/challenge.js" defer></script>
     <title>2586</title>
 </head>
 
@@ -101,30 +103,19 @@
                     </tr>
                 </table>
             </section>
-            <section class="box">
-                <header>
-                    <h2 id="location">Location</h2>
-                </header>
-                <table>
-                    <tr>
-                        <td>Airport</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div>
-                                <input type="radio" id="airport1" name="choice">
-                                <label for="airport1">box1</label><br>
-
-                                <input type="radio" id="airport2" name="choice">
-                                <label for="airport2">box2</label><br>
-
-                                <input type="radio" id="airport3" name="choice">
-                                <label for="airport3">box3</label><br>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </section>
+        <div class="app">
+            <h3>At the airport security check, the metal part of the ingredient container causes problems. Container arouses the interest of employees and they start asking you questions about it.You panic, and decide to lie and explain that you're a chemist and that's why you have the container with you. The employees don't fully believe you and they decide to test you.</h3>
+            <div class="quiz">
+                <h4 id="question">Kysympähämn vaamn</h4>
+                <div id="answer-buttons">
+                    <button class="btn">Answer 1</button>
+                    <button class="btn">Answer 2</button>
+                    <button class="btn">Answer 3</button>
+                    <button class="btn">Answer 4</button>
+                </div>
+                <button id="slay-btn">On tsällenstsit tehty prkl</button>
+            </div>
+        </div>
         </div>
     </main>
     <footer class="page-footer">
