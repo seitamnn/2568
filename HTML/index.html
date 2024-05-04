@@ -132,12 +132,7 @@
     </footer>
 </div>
 
-<div id="player-model">
-    <form id="player-form">
-        <input type="text" placeholder="Player name" required>
-        <input type="submit" value="Start game">
-    </form>
-</div>
+
 
 <script>
   const cowBtn = document.getElementById('cowBtn');
@@ -204,13 +199,13 @@
 });
 
 
-  const playerForm = document.getElementById('player-form');
+  //const playerForm = document.getElementById('player-form');
 
-  playerForm.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const playerName = playerForm.querySelector('input[type="text"]').value;
-    playerModel.style.display = 'none';
-});
+  //playerForm.addEventListener('submit', function(event) {
+    //event.preventDefault();
+  //  const playerName = playerForm.querySelector('input[type="text"]').value;
+   // playerModel.style.display = 'none';
+//});
 
 
 </script>
