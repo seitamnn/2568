@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playerModelDiv = document.getElementById('player-model');
     playerModelDiv.style.display = 'block'; // Näytä modaali
 
-    // Kun pelaaja antaa nimensä ja aloittaa pelin
+    // pelaaja antaa nimensä ja aloittaa pelin
     document.querySelector('#player-form').addEventListener('submit', function(evt) {
         evt.preventDefault();
         const playerName = document.querySelector('#player-input').value;
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Piilota player-model div
         playerModelDiv.style.display = 'none';
 
-        // Näytä pelaajan nimi pelissä
+        // pelaajan nimi pelissä
         document.getElementById('player-name').textContent = playerName;
     });
 });
