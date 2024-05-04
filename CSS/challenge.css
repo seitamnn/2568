@@ -5,6 +5,11 @@
 }
 body{
     background: #cccccc;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Oxanium", sans-serif;
+    font-style: normal;
 }
 .app{
     background: #fff;
