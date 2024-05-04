@@ -1,5 +1,4 @@
 
-
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +32,7 @@ html, body {
 .container-cow {
     margin: 0 auto;
     padding: 20px;
-    background-color:whitesmoke;
+    background-color: rgba(133, 117, 117, 0.7);
     height: 100%;
 }
 
@@ -42,13 +41,30 @@ html, body {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .cow-footer {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     text-align: center;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+#back-button {
+    background-color: #dd32ef;
+    color: #0a0a0a;
+}
+
+#back-button:hover {
+    background-color: #4f0c67;
 }
 
 .page-title {
@@ -87,7 +103,7 @@ main {
     border-radius: 6px;
     box-shadow:rgba(0,0,0,0.3)3px 3px 10px;
     margin-bottom: 1rem;
-    background-color: whitesmoke;
+    background-color: #efeaea;
 }
 
 .box h2,
@@ -153,20 +169,27 @@ main {
 
 .button {
     cursor: pointer;
-    background-color: whitesmoke;
+    background-color: lightgrey;
 }
 
 header {
     background-color: gray ;
-    color: whitesmoke;
-    padding: 20px;
+    color: lightgrey;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
-h1 {
-    margin: 0;
+.title {
+    margin: 0 auto;
     font-size: 1.5rem;
-    color: whitesmoke;
+    color: lightgrey;
+    text-align: center;
 }
+
+
+
+
+

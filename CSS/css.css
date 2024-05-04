@@ -132,24 +132,53 @@ main {
     margin: 0.5rem;
 }
 
-#player-modal {
-    width: 100vw;
-    height: 50vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 44, 133, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 9999;
+    outline: 2px solid transparent;
+    box-shadow: 0 0 0 2px #7a0d21, 0 0 10px 4px rgb(129, 43, 59);
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
 }
 
 #player-form {
-    display: flex;
-    width: 50%;
-    margin: 3rem auto;
-    flex-direction: column;
+    text-align: center;
 }
 
-#player-form input {
-    padding: 1rem;
+#player-input {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: rgb(25, 30, 31);
+    color: lightgray;
 }
+
+#player-form input[type="submit"] {
+    background-color: #7a0d21;
+    color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#player-form input[type="submit"]:hover {
+    background-color: #812b3b;
+}
+
+
 
 #weather td:first-child, #weather td:nth-child(2) {
     border-right: gray 1px solid;

@@ -1,55 +1,67 @@
 'use strict';
 
-// Leaflet map initialization
-const map = L.map('map', { tap: false });
-L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-}).addTo(map);
-map.setView([60, 24], 7);
-
-// Show Cow dialog
 const cowBtn = document.getElementById('cowBtn');
 const cowDialog = document.getElementById('cowDialog');
 const closeCowBtn = document.getElementById('closeCowBtn');
-
 cowBtn.addEventListener('click', async () => {
     const response = await fetch('cow.html');
     const content = await response.text();
     document.getElementById('cowContent').innerHTML = content;
     cowDialog.showModal();
 });
-
 closeCowBtn.addEventListener('click', () => cowDialog.close());
 
-// About dialog
 const aboutBtn = document.getElementById('aboutBtn');
 const aboutDialog = document.getElementById('aboutDialog');
 const closeAboutBtn = document.getElementById('closeAboutBtn');
-
 aboutBtn.addEventListener('click', async () => {
     const response = await fetch('about.html');
     const content = await response.text();
     document.getElementById('aboutContent').innerHTML = content;
     aboutDialog.showModal();
 });
-
 closeAboutBtn.addEventListener('click', () => aboutDialog.close());
 
-// Help dialog
 const helpBtn = document.getElementById('helpBtn');
 const helpDialog = document.getElementById('helpDialog');
 const closeHelpBtn = document.getElementById('closeHelpBtn');
-
 helpBtn.addEventListener('click', async () => {
     const response = await fetch('help.html');
     const content = await response.text();
     document.getElementById('helpContent').innerHTML = content;
     helpDialog.showModal();
 });
-
 closeHelpBtn.addEventListener('click', () => helpDialog.close());
 
+
+// prkl kuvake muuttuu kun ainesosa haettu
+let ingredient = 0; // Ainesosa ei hallussa
+const achievement = document.getElementById("achievement");
+
+function getIngredient() {
+    ingredient = 1; // Ainesosa hallussa
+    achievement.innerText = "🧪"; // Merkki muuttuu ainesosan saamisen myötä
+}
+getIngredient();
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Avaa player-model ikkunan sivun latautuessa
+    const playerModelDiv = document.getElementById('player-model');
+    playerModelDiv.style.display = 'block'; // Näytä modaali
+
+    // Kun pelaaja antaa nimensä ja aloittaa pelin
+    document.querySelector('#player-form').addEventListener('submit', function(evt) {
+        evt.preventDefault();
+        const playerName = document.querySelector('#player-input').value;
+        gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
+
+        // Piilota player-model div
+        playerModelDiv.style.display = 'none';
+
+        // Näytä pelaajan nimi pelissä
+        document.getElementById('player-name').textContent = playerName;
+    });
+});
 
 // Funktio, joka käynnistää pelin
 //function playGame() {

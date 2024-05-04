@@ -60,3 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
+const backButton = document.getElementById('back-button');
+// Lisätään click-kuuntelija painikkeelle
+    backButton.addEventListener('click', () => {
+        // Ohjataan selaimeen takaisin alkuperäiselle sivulle
+        window.location.href = 'index.html';
+    });

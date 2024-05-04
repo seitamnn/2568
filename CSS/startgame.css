@@ -10,10 +10,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: lightgrey;
 }
 
-#player-model {
+#Start-game {
     background-color: rgba(97, 44, 133, 0.7);
     padding: 20px;
     border-radius: 10px;
@@ -22,18 +22,7 @@ body {
     box-shadow: 0 0 0 2px #fff, 0 0 10px 4px rgba(255, 255, 255, 0.5);
 }
 
-#player-form input[type="text"] {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #3f3535;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: #191e1f;
-    color: lightgray;
-    margin-top: 5px;
-}
-
-#player-form input[type="submit"] {
+button {
     padding: 10px 20px;
     background-color: #7a0d21;
     color: lightgray;
@@ -43,7 +32,7 @@ body {
     margin-bottom: 5px;
 }
 
-#player-form input[type="submit"]:hover {
+button:hover {
     background-color: #812b3b;
 }
 
