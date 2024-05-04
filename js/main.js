@@ -17,9 +17,10 @@ const greenIcon = L.divIcon({className: 'green-icon'});
 
 
 // form for player name  todo: tässä tarkoktuksena saada kiinni pelaajan syöttämästä nimestä ja tän jälkeen kutsutaan funktiota gameSetup kerran täällä kun nimi syötetty newgame päätepisteellä -> http://127.0.0.1:5000/newgame?player=kakkapylly
-document.querySelector('#gameBtn').addEventListener('click', function(evt){
-  evt.preventDefault()
-  gameSetup(`http://127.0.0.1:5000/newgame?player=Miianhermot`)
+document.querySelector('#player-form').addEventListener('submit', function(evt){
+  evt.preventDefault();
+  const playerName = document.querySelector('#player-input').value;
+  gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
 })
 
 // function to fetch data from API
