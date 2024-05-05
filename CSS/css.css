@@ -47,7 +47,7 @@ body {
     margin: 0;
     text-align: center;
     font-size: xxx-large;
-    color: whitesmoke;
+    color: lightgray;
     padding-left: 7.5rem;
 }
 
@@ -55,7 +55,7 @@ body {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     text-align: center;
-    color: whitesmoke;
+    color: lightgray;
 }
 
 .ion-icon {
@@ -79,6 +79,8 @@ main {
 .box {
     padding: 1rem;
     font-size: x-small;
+    color: #0a0a0a;
+    background-color: grey;
 }
 
 #map {
@@ -93,7 +95,7 @@ main {
 .box table {
     width: 100%;
     text-align: center;
-    background-color: white;
+    background-color: lightgray;
     border: whitesmoke solid 1px;
     border-radius: 2px;
 }
@@ -138,20 +140,17 @@ main {
     z-index: 9999;
     outline: 2px solid transparent;
     box-shadow: 0 0 0 2px #7a0d21, 0 0 10px 4px rgb(129, 43, 59);
-}
-
-.modal-content {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
+    color: lightgray;
+    font-size: 17px;
 }
 
 #player-form {
     text-align: center;
+    padding-top: 30px;
 }
 
 #player-input {
-    width: 100%;
+    width: 90%;
     margin-bottom: 20px;
     font-size: 20px;
     background-color: rgb(25, 30, 31);
@@ -171,8 +170,6 @@ main {
 #player-form input[type="submit"]:hover {
     background-color: #812b3b;
 }
-
-
 
 #weather td:first-child, #weather td:nth-child(2) {
     border-right: gray 1px solid;

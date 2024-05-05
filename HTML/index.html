@@ -9,7 +9,6 @@
     <link href="/CSS/css.css" rel="stylesheet">
     <link href="/CSS/challenge.css" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" defer></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js" defer></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js" defer></script>
     <script src="/js/main.js" defer></script>
     <script src="/js/challenge.js" defer></script>
@@ -80,8 +79,8 @@
                         <td colspan="2"><span id="player-name">Player Name</span> <span id="achievement">❌</span></td>
                     </tr>
                     <tr>
-                        <td>Currency: <span id="currency">100</span> $</td>
-                        <td>Distance: <span id="distance">3</span> Steps</td>
+                        <td>Currency: <span id="currency">100</span> 💰</td>
+                        <td>Distance: <span id="distance">3</span> Steps👣</td>
                     </tr>
                 </table>
             </section>
@@ -106,6 +105,19 @@
 </div>
 
 <div id="player-model" class="modal">
+    <p> OHJEITA PELAAMISEEN: </p>
+    <p>👽Peli alkaa automaattisesti annettuasi nimesi alla olevaan kenttään.</p>
+    <p>👽tehtäväsi on lentää kuubasta norjaan hakemaan muinainen ainesosa ja tämän jälkeen kuljettaa ainesosa takaisin kuubaan.</p>
+    <p>👽jokaisella kierroksella valitset kolmesta automaattisesti arvotusta lentokentästä seuraavan jolle haluat lentää.
+        lentolippujen hinnat vaihtelevat kohteesta riippuen.</p>
+    <p>👽pelissä on rajallinen määrä valuuttaa ja etäisyyttä alieneihin.</p>
+    <p>👽jos valuutta tai etäisyys loppuvat, häviät pelin.</p>
+    <p>👽voit saada lisää valuuttaa ja etäisyyttä suorittamalla vaihtoehtoisia  tehtäviä lentokentillä.
+        tehtävät aukeavat painamalla tehtävä painiketta.</p>
+    <p>👽jos pääset takisin kuubaan ainesosan kanssa, olet voittanut pelin.</p>
+    <p>👽sivun oikeassa ylälukmassa oleva about painikeesta näet tarvittaessa.</p>
+    <p>👽sivun oikeassa yläkulmassa olevasta Help painikeesta saat tarvittaessa nämä ohjeet esille.</p>
+
     <form id="player-form">
         <input id="player-input" type="text" placeholder="Player name" required>
         <input type="submit" value="Start game">
