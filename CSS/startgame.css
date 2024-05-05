@@ -3,33 +3,37 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-image: url('../img/map.JPG');
+    background-image: url('/img/map.JPG');
     background-size: cover;
     background-position: center;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: lightgrey;
+    color: #dad4e1;
 }
 
 #Start-game {
-    background-color: rgba(97, 44, 133, 0.7);
+    text-align: center;
+    background-color: rgba(72, 62, 62, 0.7);
     padding: 20px;
     border-radius: 10px;
-    margin-top: 120px;
+    margin-top: 200px;
+    margin-left: 110px;
+    margin-right: 110px;
     outline: 2px solid transparent;
-    box-shadow: 0 0 0 2px #fff, 0 0 10px 4px rgba(255, 255, 255, 0.5);
+
 }
 
 button {
-    padding: 10px 20px;
+    padding: 15px 25px;
     background-color: #7a0d21;
     color: lightgray;
-    border: none;
+    border: lightgrey;
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 5px;
+    font-size: 1.2em;
 }
 
 button:hover {
@@ -38,7 +42,7 @@ button:hover {
 
 .title {
     position: absolute;
-    top: 30px;
+    top: 1px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -60,6 +64,3 @@ button:hover {
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 255, 255, 0.3);
 }
-
-
-
