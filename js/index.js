@@ -48,20 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Avaa player-model ikkunan sivun latautuessa
     const playerModelDiv = document.getElementById('player-model');
     playerModelDiv.style.display = 'block'; // Näytä modaali
-
+});
     // pelaaja antaa nimensä ja aloittaa pelin
-    document.querySelector('#player-form').addEventListener('submit', function(evt) {
-        evt.preventDefault();
-        const playerName = document.querySelector('#player-input').value;
-        gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
+    //document.querySelector('#player-form').addEventListener('submit', function(evt) {
+       // evt.preventDefault();
+       // const playerName = document.querySelector('#player-input').value;
+       // gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
 
         // Piilota player-model div
-        playerModelDiv.style.display = 'none';
+       // playerModelDiv.style.display = 'none';
 
         // pelaajan nimi pelissä
-        document.getElementById('player-name').textContent = playerName;
-    });
-});
+       // document.getElementById('player-name').textContent = playerName;
+    //});
+
 
 // Funktio, joka käynnistää pelin
 //function playGame() {

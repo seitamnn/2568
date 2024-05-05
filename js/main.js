@@ -17,11 +17,14 @@ const greenIcon = L.divIcon({className: 'green-icon'});
 
 
 // form for player name  todo: tässä tarkoktuksena saada kiinni pelaajan syöttämästä nimestä ja tän jälkeen kutsutaan funktiota gameSetup kerran täällä kun nimi syötetty newgame päätepisteellä -> http://127.0.0.1:5000/newgame?player=kakkapylly
-//document.querySelector('#player-form').addEventListener('submit', function(evt){
-  //evt.preventDefault();
-  //const playerName = document.querySelector('#player-input').value;
-  //gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
-//})
+document.querySelector('#player-form').addEventListener('submit', function(evt) {
+  evt.preventDefault();
+  const playerModelDiv = document.querySelector('#player-model')
+  const playerName = document.querySelector('#player-input').value;
+  gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
+  playerModelDiv.style.display = 'none';
+})
+
 
 // function to fetch data from API
 async function getData(url){
@@ -42,14 +45,7 @@ function updatePlayerInfo(data){
 }
 
 // function to update airports in UI
-function updateAirports(airports){
-  const airport1 = document.querySelector('label[for=airport1]');
-  const airport2 = document.querySelector('label[for=airport2]');
-  const airport3 = document.querySelector('label[for=airport3]');
-  airport1.innerHTML = `Airport: ${airports.airport[0].airport_name}<br>Country: ${airports.airport[0].country_name}  `;
-  airport2.innerHTML = `Airport: ${airports.airport[1].airport_name}<br>Country: ${airports.airport[1].country_name}  `;
-  airport3.innerHTML = `Airport: ${airports.airport[2].airport_name}<br>Country: ${airports.airport[2].country_name}  `;
-}
+
 // function to check if game is over
 function checkGameOver (currency, distance){ // todo: pitää tarkistaa toimiiko tällä. Epäilen. XD
   if (currency < 0 || distance < 0){
@@ -93,7 +89,7 @@ async function gameSetup(url) {
         gameSetup(`http://127.0.0.1:5000/fly_to?playerName=${playerInfo.playerInfo.screen_name}&dest=${location.airport_name}&price=10`)
       })
     }
-    updateAirports(playerInfo); // random lentokentät location boxiin
+    //updateAirports(playerInfo); // random lentokentät location boxiin  turha ehkä
 
   } catch (error){
     console.log(error);
