@@ -30,13 +30,7 @@ body {
     position: relative;
 }
 
-.logo-container {
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.logo {
+#key {
     height: 50px;
     width: 50px;
 }
