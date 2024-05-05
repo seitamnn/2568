@@ -49,7 +49,7 @@ async function checkIngredient (data) {
     achievement.innerText = "🧪";
     const response = await fetch(`http://127.0.0.1:5000/ingredient?playerName=${data.playerInfo.screen_name}`);
     if (!response.ok) throw new Error('Invalid input');
-    alert("ainesosa saatu!")
+    alert("ainesosa saatu! Painele vittu sinne Kuubaan nyt.")
     // document.querySelector('.goal').classList.remove('hide');
   }
 }

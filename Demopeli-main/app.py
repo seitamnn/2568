@@ -62,11 +62,6 @@ def select_airport(): #valitaan kolme kenttää randomilla
          "country_name": three_airports[2][3],
          "longitude": three_airports[2][2],
          "latitude": three_airports[2][1]
-         },
-        {"airport_name": "Oslo Airport, Gardermoen",
-         "country_name": "Norway",
-         "longitude": 11.1004,
-         "latitude": 60.193901
          }
     ]
     return airport_choices
