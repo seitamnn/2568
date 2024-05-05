@@ -38,11 +38,11 @@ closeHelpBtn.addEventListener('click', () => helpDialog.close());
 let ingredient = 0; // Ainesosa ei hallussa
 const achievement = document.getElementById("achievement");
 
-function getIngredient() {
-    ingredient = 1; // Ainesosa hallussa
-    achievement.innerText = "🧪"; // Merkki muuttuu ainesosan saamisen myötä
-}
-getIngredient();
+//function getIngredient() {
+    //ingredient = 1; // Ainesosa hallussa
+    //achievement.innerText = "🧪"; // Merkki muuttuu ainesosan saamisen myötä
+//}
+//getIngredient();
 
 document.addEventListener('DOMContentLoaded', function() {
     // Avaa player-model ikkunan sivun latautuessa

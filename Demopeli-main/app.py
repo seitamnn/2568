@@ -42,7 +42,7 @@ def fly(id, dest, consumption=0, player=None): #ei käytössä, voi poistaa joll
     return json_data
 
 def select_airport(): #valitaan kolme kenttää randomilla
-    sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name != 'Norway'"
+    sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
     cursor = config.conn.cursor()
     cursor.execute(sql)
     airports = cursor.fetchall()
@@ -62,6 +62,11 @@ def select_airport(): #valitaan kolme kenttää randomilla
          "country_name": three_airports[2][3],
          "longitude": three_airports[2][2],
          "latitude": three_airports[2][1]
+         },
+        {"airport_name": "Oslo Airport, Gardermoen",
+         "country_name": "Norway",
+         "longitude": 11.1004,
+         "latitude": 60.193901
          }
     ]
     return airport_choices
@@ -107,10 +112,14 @@ def start(screen_name): #tää käyttöön, kun saadaan pelaajan syöttämä nim
         return str(uuid.uuid4())
     mycursor = config.conn.cursor()
     sql = f"INSERT INTO game (id, location, screen_name, currency, alien_distance, in_possession) VALUES (%s, %s, %s, %s, %s,%s)" #noihin laitetaa arvot jotka annetaa seuraavalla rivillä
-    mycursor.execute(sql, (generate_player_id(), 'MUHA', screen_name, 500, 6, False))  # MUHA = José Martí International Airport
+    mycursor.execute(sql, (generate_player_id(), 'MUHA', screen_name, 900, 6, False))  # MUHA = José Martí International Airport
     mycursor.fetchall()
     return flyto(screen_name, "José Martí International Airport", 0)
 
+def update_possession(screen_name):
+    sql = f"UPDATE game SET in_possession = true WHERE screen_name = '{screen_name}'"
+    cursor = config.conn.cursor()
+    cursor.execute(sql)
 
 # http://127.0.0.1:5000/newgame?player=Vesa&loc=EFHK
 @app.route('/newgame') # tää käyttöön kun saadaan pelaajan täyttämä nimi talteen
@@ -129,54 +138,16 @@ def fly_to():
     price = int(args.get("price"))
     return flyto(screen_name, dest, price)
 
+@app.route('/ingredient') #päivitetään ainesosa
+def update_in_possession():
+    args = request.args
+    screen_name = args.get("playerName")
+    update_possession(screen_name)
+    return player_info(screen_name)
 
 @app.route('/player_info/<screen_name>/') # pelaajan tiedot haetaan tällä
 def player_test(screen_name):
     return player_info(screen_name)
-
-
-@app.route('/select_norway') # ei ainakaan vielä käytössä
-def select_airport_norway():
-    try:
-        sql = f"SELECT airport.name, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Norway'"
-        cursor = config.conn.cursor()
-        cursor.execute(sql)
-        norway = cursor.fetchone()
-        status_code = 200
-        norway_airport = {
-            "airport": norway[0],
-            "country": norway[1]
-        }
-    except ValueError:
-        status_code = 400
-        norway_airport = {
-            "status_code": status_code,
-            "message": "Invalid input"
-        }
-    json_response = json.dumps(norway_airport)
-    return Response(response=json_response, status=status_code, mimetype='application/json')
-
-
-@app.route('/select_cuba/') # ei vielä käytössä ei ole ei
-def select_airport_cuba():
-    try:
-        sql = f"SELECT airport.name, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Cuba'"
-        cursor = config.conn.cursor()
-        cursor.execute(sql)
-        cuba = cursor.fetchone()
-        status_code = 200
-        cuba_airport = {
-            "airport": cuba[0],
-            "country": cuba[1]
-        }
-    except ValueError:
-        status_code = 400
-        cuba_airport = {
-            "status_code": status_code,
-            "message": "Invalid input"
-        }
-    json_response = json.dumps(cuba_airport)
-    return Response(response=json_response, status=status_code, mimetype='application/json')
 
 
 if __name__ == '__main__':
