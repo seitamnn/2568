@@ -1,16 +1,5 @@
 'use strict';
 
-const pictureBtn = document.getElementById('key');
-const cowDialog = document.getElementById('cowDialog');
-const closeCowBtn = document.getElementById('closeCowBtn');
-pictureBtn.addEventListener('click', async () => {
-  const response = await fetch('cow.html');
-  const content = await response.text();
-  document.getElementById('cowContent').innerHTML = content;
-  cowDialog.showModal();
-});
-closeCowBtn.addEventListener('click', () => cowDialog.close());
-
 const aboutBtn = document.getElementById('aboutBtn');
 const aboutDialog = document.getElementById('aboutDialog');
 const closeAboutBtn = document.getElementById('closeAboutBtn');

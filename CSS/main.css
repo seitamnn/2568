@@ -1,0 +1,21 @@
+@font-face {
+    src: url("Oxanium.ttf") format("truetype");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Oxanium", sans-serif;
+    font-style: normal;
+}
+
+body {
+    /*background-image: ;*/
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+

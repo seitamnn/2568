@@ -1,176 +1,121 @@
 
-.flex-wrap {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.space-evenly {
-    justify-content: space-evenly;
-}
-
-.responsive-img {
-    width: 100%;
-    height: auto;
-}
-
-.hide {
-    display: none;
-}
-
-.float {
-    float: left;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: "Oxanium", sans-serif;
-    font-style: normal;
-}
-
 .container-cow {
     margin: 0 auto;
     padding: 20px;
     background-color: rgba(133, 117, 117, 0.7);
     height: 100%;
-}
 
-.cow-header {
-    display: flex;
-    background: linear-gradient(to bottom, #430559, #dd32ef);
-    padding: 1rem;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.cow-footer {
-    background: linear-gradient(to bottom, #430559, #dd32ef);
-    padding: 1rem;
-    text-align: center;
-}
-
-.back-button-container {
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
-}
-
-#back-button {
-    background-color: #dd32ef;
-    color: #0a0a0a;
-}
-
-#back-button:hover {
-    background-color: #4f0c67;
-}
-
-.page-title {
-    margin: 0;
-}
-
-.ion-icon {
-    vertical-align: middle;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-main {
-    padding: 1rem 2rem;
-}
-
-
-.boxes {
-    width: 70%;
-    float: right;
-}
-
-.box {
-    padding: 1rem;
-    font-size: x-small;
-    border-radius: 6px;
-    box-shadow:rgba(0,0,0,0.3)3px 3px 10px;
-    margin-bottom: 1rem;
-    background-color: #efeaea;
-}
-
-.box h2,
-.box figure {
-    margin: 0;
-    padding: 0;
-}
-
-.box table {
-    width: 100%;
-    text-align: center;
-    border: lightgray solid 1px;
-    border-radius: 4px;
-}
-
-#weather {
-    border-spacing: 0;
-}
-
-#weather td {
-    padding: 0.3rem;
-}
-
-#weather td:first-child,
-#weather td:nth-child(2) {
-    border-right: lightgray 1px solid;
-}
-
-.lead-img {
-    width: 100%;
-    margin: 0 0 1rem 0;
-}
-
-@media screen and (min-width: 768px) {
-    .box {
-        font-size: initial;
+    .cow-header {
+        display: flex;
+        background: linear-gradient(to bottom, #430559, #dd32ef);
+        padding: 1rem;
+        justify-content: center;
+        text-align: center;
+        position: relative;
     }
-    #map {
-        width: 60%;
-        height: 25rem;
-        overflow: hidden;
-        border-radius: 6px;
-        box-shadow: white 3px 3px 10px;
-        margin-bottom:1em;
-        float: left;
+
+    .cow-footer {
+        background: linear-gradient(to bottom, #430559, #dd32ef);
+        padding: 1rem;
+        text-align: center;
     }
+
+    main {
+        padding: 1rem 2rem;
+    }
+
+
     .boxes {
-        width: 40%;
-        padding-left: 1rem;
-        box-sizing: border-box;
+        width: 70%;
+        float: right;
+    }
+
+    .box {
+        padding: 1rem;
+        font-size: x-small;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px;
+        margin-bottom: 1rem;
+        background-color: #efeaea;
+    }
+
+    .box h2,
+    .box figure {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box table {
+        width: 100%;
+        text-align: center;
+        border: lightgray solid 1px;
+        border-radius: 4px;
+    }
+
+    #weather {
+        border-spacing: 0;
+    }
+
+    #weather td {
+        padding: 0.3rem;
+    }
+
+    #weather td:first-child,
+    #weather td:nth-child(2) {
+        border-right: lightgray 1px solid;
+    }
+
+    .lead-img {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+
+    .button {
+        cursor: pointer;
+        background-color: lightgrey;
+    }
+
+    header {
+        background: linear-gradient(to bottom, #430559, #dd32ef);
+        color: whitesmoke;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .title {
+        margin: 0 auto;
+        font-size: 1.5rem;
+        color: lightgrey;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+        .box {
+            font-size: initial;
+        }
+
+        #cow-map {
+            width: 60%;
+            height: 25rem;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: white 3px 3px 10px;
+            margin-bottom: 1em;
+            float: left;
+        }
+
+        .boxes {
+            width: 40%;
+            padding-left: 1rem;
+            box-sizing: border-box;
+        }
     }
 }
 
-.button {
-    cursor: pointer;
-    background-color: lightgrey;
-}
 
-header {
-    background: linear-gradient(to bottom, #430559, #dd32ef) ;
-    color: whitesmoke;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.title {
-    margin: 0 auto;
-    font-size: 1.5rem;
-    color: lightgrey;
-    text-align: center;
-}
 
 
 
