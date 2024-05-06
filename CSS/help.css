@@ -5,12 +5,6 @@ body {
     height: 100%;
     font-family: "Oxanium", sans-serif;
     font-style: normal;
+    color: lightgray;
 }
 
-
-.help-footer {
-    background: linear-gradient(to bottom, #430559, #dd32ef);
-    color:whitesmoke;
-    padding: 1rem;
-    text-align: center;
-}

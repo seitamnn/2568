@@ -3,7 +3,7 @@
 
 const map = L.map('map', {tap: false});
 L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-  maxZoom: 20,
+  maxZoom: 50,
   subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
 }).addTo(map);
 map.setView([60, 24], 7);
@@ -16,12 +16,15 @@ const redIcon = L.divIcon({className: 'red-icon'});
 const greenIcon = L.divIcon({className: 'green-icon'});
 
 
-// form for player name  todo: tässä tarkoktuksena saada kiinni pelaajan syöttämästä nimestä ja tän jälkeen kutsutaan funktiota gameSetup kerran täällä kun nimi syötetty newgame päätepisteellä -> http://127.0.0.1:5000/newgame?player=kakkapylly
-document.querySelector('#player-form').addEventListener('submit', function(evt){
+// form for player name
+document.querySelector('#player-form').addEventListener('submit', function(evt) {
   evt.preventDefault();
+  const playerModelDiv = document.querySelector('#player-model')
   const playerName = document.querySelector('#player-input').value;
   gameSetup(`http://127.0.0.1:5000/newgame?player=${playerName}`);
+  playerModelDiv.style.display = 'none';
 })
+
 
 // function to fetch data from API
 async function getData(url){
@@ -40,19 +43,20 @@ function updatePlayerInfo(data){
   currency.innerHTML = data.playerInfo.currency;
   distance.innerHTML = data.playerInfo.alien_distance;
 }
-
-// function to update airports in UI
-function updateAirports(airports){
-  const airport1 = document.querySelector('label[for=airport1]');
-  const airport2 = document.querySelector('label[for=airport2]');
-  const airport3 = document.querySelector('label[for=airport3]');
-  airport1.innerHTML = `Airport: ${airports.airport[0].airport_name}<br>Country: ${airports.airport[0].country_name}  `;
-  airport2.innerHTML = `Airport: ${airports.airport[1].airport_name}<br>Country: ${airports.airport[1].country_name}  `;
-  airport3.innerHTML = `Airport: ${airports.airport[2].airport_name}<br>Country: ${airports.airport[2].country_name}  `;
+// function to check if the player has the ingredient
+async function checkIngredient (data) {
+  if (data.playerInfo.location === "ENGM") {
+    achievement.innerText = "🧪";
+    const response = await fetch(`http://127.0.0.1:5000/ingredient?playerName=${data.playerInfo.screen_name}`);
+    if (!response.ok) throw new Error('Invalid input');
+    alert("ainesosa saatu! Painele vittu sinne Kuubaan nyt.")
+    // document.querySelector('.goal').classList.remove('hide');
+  }
 }
+
 // function to check if game is over
-function checkGameOver (currency, distance){ // todo: pitää tarkistaa toimiiko tällä. Epäilen. XD
-  if (currency < 0 || distance < 0){
+function checkGameOver (currency, distance){
+  if (currency <= 0 || distance <= 0){
     alert(`Game over!`);
     return false;
   }
@@ -68,6 +72,7 @@ async function gameSetup(url) {
     console.log(playerInfo);
     updatePlayerInfo(playerInfo); // päivitetään pelaaja tiedot näytölle
     if(!checkGameOver(playerInfo.playerInfo.currency, playerInfo.playerInfo.alien_distance)) return;
+    await checkIngredient(playerInfo)
 
     const pmarker = L.marker([playerInfo.currentLocation.airport_latitude, playerInfo.currentLocation.airport_longitude]).addTo(map); // pelaajan sijainti kartalle
     airportMarkers.addLayer(pmarker)
@@ -80,29 +85,34 @@ async function gameSetup(url) {
       marker.setIcon(redIcon)
       const popupContent = document.createElement('div');
       const h4 = document.createElement('h4');
-      h4.innerHTML = location.airport_name;
+      h4.innerHTML = `Airport: ${location.airport_name}<br>Country: ${location.country_name}`;
       popupContent.append(h4);
       const goButton = document.createElement('button');
       goButton.innerHTML = 'Fly here';
       popupContent.append(goButton);
       const p = document.createElement('p');
-      p.innerHTML = 'Price is 10$';
+      const price = Math.floor(Math.random()*100+1);
+      p.innerHTML = `Price is ${price}$`;
       popupContent.append(p);
       marker.bindPopup(popupContent);
       goButton.addEventListener('click', function(){
-        gameSetup(`http://127.0.0.1:5000/fly_to?playerName=${playerInfo.playerInfo.screen_name}&dest=${location.airport_name}&price=10`)
+        gameSetup(`http://127.0.0.1:5000/fly_to?playerName=${playerInfo.playerInfo.screen_name}&dest=${location.airport_name}&price=${price}`)
       })
     }
-    updateAirports(playerInfo); // random lentokentät location boxiin
+
 
   } catch (error){
     console.log(error);
   }
 }
- //kutsutaan pääfunktiota - toimii vaan index.html sivulla ja nipsun tilalle pitää laittaa joku pelaajanimi mikä löytyy omasta tietokannasta.
 
 
-// event listener to hide goal splash
+
+
+// event listener to hide goal splash todo: luo tämmönen, kun voittaa/saa vasta-aineen
+// document.querySelector('.goal').addEventListener('click', function (evt) {
+//   evt.currentTarget.classList.add('hide');
+
 //blablaa
 //saakeli että menee hermot nyt kyllä kuulkaa
 

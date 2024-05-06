@@ -30,13 +30,7 @@ body {
     position: relative;
 }
 
-.logo-container {
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
-
-.logo {
+#key {
     height: 50px;
     width: 50px;
 }
@@ -53,15 +47,15 @@ body {
     margin: 0;
     text-align: center;
     font-size: xxx-large;
-    color: whitesmoke;
-    padding-left: 13rem;
+    color: lightgray;
+    padding-left: 7.5rem;
 }
 
 .page-footer {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     text-align: center;
-    color: whitesmoke;
+    color: lightgray;
 }
 
 .ion-icon {
@@ -85,6 +79,8 @@ main {
 .box {
     padding: 1rem;
     font-size: x-small;
+    color: #0a0a0a;
+    background-color: grey;
 }
 
 #map {
@@ -99,7 +95,7 @@ main {
 .box table {
     width: 100%;
     text-align: center;
-    background-color: white;
+    background-color: lightgray;
     border: whitesmoke solid 1px;
     border-radius: 2px;
 }
@@ -132,23 +128,47 @@ main {
     margin: 0.5rem;
 }
 
-#player-modal {
-    width: 100vw;
-    height: 50vh;
-    background-color: rgba(0, 0, 0, 0.8);
-    position: absolute;
-    top: 0;
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(97, 44, 133, 0.7);
+    padding: 50px;
+    border-radius: 10px;
+    z-index: 9999;
+    outline: 2px solid transparent;
+    box-shadow: 0 0 0 2px #7a0d21, 0 0 10px 4px rgb(129, 43, 59);
+    color: lightgray;
+    font-size: 17px;
 }
 
 #player-form {
-    display: flex;
-    width: 50%;
-    margin: 3rem auto;
-    flex-direction: column;
+    text-align: center;
+    padding-top: 30px;
 }
 
-#player-form input {
-    padding: 1rem;
+#player-input {
+    width: 90%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: rgb(25, 30, 31);
+    color: lightgray;
+}
+
+#player-form input[type="submit"] {
+    background-color: #7a0d21;
+    color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#player-form input[type="submit"]:hover {
+    background-color: #812b3b;
 }
 
 #weather td:first-child, #weather td:nth-child(2) {

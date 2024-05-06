@@ -1,5 +1,4 @@
 
-
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +32,7 @@ html, body {
 .container-cow {
     margin: 0 auto;
     padding: 20px;
-    background-color:whitesmoke;
+    background-color: rgba(133, 117, 117, 0.7);
     height: 100%;
 }
 
@@ -42,13 +41,30 @@ html, body {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     justify-content: center;
-    align-items: center;
+    text-align: center;
+    position: relative;
 }
 
 .cow-footer {
     background: linear-gradient(to bottom, #430559, #dd32ef);
     padding: 1rem;
     text-align: center;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+#back-button {
+    background-color: #dd32ef;
+    color: #0a0a0a;
+}
+
+#back-button:hover {
+    background-color: #4f0c67;
 }
 
 .page-title {
@@ -68,17 +84,10 @@ main {
     padding: 1rem 2rem;
 }
 
-#map {
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: white 3px 3px 10px;
-    margin-bottom: 1rem;
-}
 
 .boxes {
-    width: 100%;
+    width: 70%;
+    float: right;
 }
 
 .box {
@@ -87,7 +96,7 @@ main {
     border-radius: 6px;
     box-shadow:rgba(0,0,0,0.3)3px 3px 10px;
     margin-bottom: 1rem;
-    background-color: whitesmoke;
+    background-color: #efeaea;
 }
 
 .box h2,
@@ -101,21 +110,6 @@ main {
     text-align: center;
     border: lightgray solid 1px;
     border-radius: 4px;
-}
-
-.box li {
-    width: calc(50% - 0.6rem);
-    text-align: center;
-    border: lightgray solid 1px;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 0.3rem;
-    margin: 0.3rem;
-    overflow-wrap: break-word;
-}
-
-.box img {
-    height: 3rem;
 }
 
 #weather {
@@ -141,11 +135,16 @@ main {
         font-size: initial;
     }
     #map {
-        width: 40%;
-        height: initial;
+        width: 60%;
+        height: 25rem;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: white 3px 3px 10px;
+        margin-bottom:1em;
+        float: left;
     }
     .boxes {
-        width: 60%;
+        width: 40%;
         padding-left: 1rem;
         box-sizing: border-box;
     }
@@ -153,20 +152,27 @@ main {
 
 .button {
     cursor: pointer;
-    background-color: whitesmoke;
+    background-color: lightgrey;
 }
 
 header {
-    background-color: gray ;
+    background: linear-gradient(to bottom, #430559, #dd32ef) ;
     color: whitesmoke;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
-h1 {
-    margin: 0;
+.title {
+    margin: 0 auto;
     font-size: 1.5rem;
-    color: whitesmoke;
+    color: lightgrey;
+    text-align: center;
 }
+
+
+
+
+
