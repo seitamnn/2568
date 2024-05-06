@@ -112,20 +112,26 @@ main {
 }
 
 .goal {
-    background-image:url("../img/splatter.png");
+    background-image:url("../img/paint-splatter-12.png");
     background-size:contain;
     background-repeat: no-repeat;
     padding: 9rem 7rem;
     text-align:center;
+    color: #dd32ef;
     position: absolute;
     bottom: 30%;
     filter: drop-shadow(0 0 3px #333);
-    transform: rotate(340deg);
     line-height: 1rem;
+    z-index: 999;
+}
+
+.hide{
+    display: none;
 }
 
 .goal h2, .goal p {
-    margin: 0.5rem;
+    margin: 1rem;
+    transform: rotate(320deg);
 }
 
 .modal {
