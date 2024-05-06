@@ -19,3 +19,7 @@ body {
     flex-wrap: wrap;
 }
 
+main {
+        padding: 1rem 2rem;
+    }
+
