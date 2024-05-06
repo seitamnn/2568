@@ -109,13 +109,25 @@ def start(screen_name): #tää käyttöön, kun saadaan pelaajan syöttämä nim
         return str(uuid.uuid4())
     mycursor = config.conn.cursor()
     sql = f"INSERT INTO game (id, location, screen_name, currency, alien_distance, in_possession) VALUES (%s, %s, %s, %s, %s,%s)" #noihin laitetaa arvot jotka annetaa seuraavalla rivillä
-    mycursor.execute(sql, (generate_player_id(), 'MUHA', screen_name, 900, 6, False))  # MUHA = José Martí International Airport
+    mycursor.execute(sql, (generate_player_id(), 'MUHA', screen_name, 50, 6, False))  # MUHA = José Martí International Airport
     mycursor.fetchall()
     return flyto(screen_name, "José Martí International Airport", 0)
 
 
 def update_possession(screen_name):
     sql = f"UPDATE game SET in_possession = true WHERE screen_name = '{screen_name}'"
+    cursor = config.conn.cursor()
+    cursor.execute(sql)
+
+
+def update_currency(screen_name):
+    sql = f"UPDATE game SET currency = currency + 50 WHERE screen_name = '{screen_name}'"
+    cursor = config.conn.cursor()
+    cursor.execute(sql)
+
+
+def update_distance(screen_name):
+    sql = f"UPDATE game SET alien_distance = alien_distance - 1 WHERE screen_name = '{screen_name}'"
     cursor = config.conn.cursor()
     cursor.execute(sql)
 
@@ -143,6 +155,22 @@ def update_in_possession():
     args = request.args
     screen_name = args.get("playerName")
     update_possession(screen_name)
+    return player_info(screen_name)
+
+
+@app.route('/correct_answer') #jos vastaa oikein kyssäriin
+def correct_answer():
+    args = request.args
+    screen_name = args.get("playerName")
+    update_currency(screen_name)
+    return player_info(screen_name)
+
+
+@app.route('/wrong_answer') #jos vastaa väärin
+def wrong_answer():
+    args = request.args
+    screen_name = args.get("playerName")
+    update_currency(screen_name)
     return player_info(screen_name)
 
 

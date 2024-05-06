@@ -63,7 +63,7 @@ function checkGameOver (currency, distance){
       confettiRadius: 6,
       confettiNumber: 500,
     })
-    alert(`Game over!`);
+    alert('Game over!')
     return false;
   }
   return true;
@@ -74,7 +74,7 @@ function checkWin (data){
   if (data.playerInfo.location === "MUHA" && data.playerInfo.in_possession === 1){
     const jsConfetti = new JSConfetti()
     jsConfetti.addConfetti({
-      emojis: ['🌈', '⚡️', '🦄', '✨', '💫', '🌸'],
+      emojis: ['🌈', '⚡️', '🦄', '✨', '🌸'],
       confettiRadius: 6,
       confettiNumber: 500,
     })
@@ -121,8 +121,6 @@ async function gameSetup(url) {
         gameSetup(`http://127.0.0.1:5000/fly_to?playerName=${playerInfo.playerInfo.screen_name}&dest=${location.airport_name}&price=${price}`)
       })
     }
-
-
   } catch (error){
     console.log(error);
   }
@@ -133,8 +131,7 @@ document.querySelector('.goal').addEventListener('click', function (evt) {
   evt.currentTarget.classList.add('hide');
 })
 
-//blablaa
-//saakeli että menee hermot nyt kyllä kuulkaa
+
 
 //http://127.0.0.1:5000/newgame?player=Vesa&loc=EFHK
 //'http://127.0.0.1:5000/player_info/Pumba/'
