@@ -49,8 +49,7 @@ async function checkIngredient (data) {
     achievement.innerText = "🧪";
     const response = await fetch(`http://127.0.0.1:5000/ingredient?playerName=${data.playerInfo.screen_name}`);
     if (!response.ok) throw new Error('Invalid input');
-    alert("ainesosa saatu! Painele vittu sinne Kuubaan nyt.")
-    // document.querySelector('.goal').classList.remove('hide');
+    document.querySelector('.goal').classList.remove('hide');
   }
 }
 
@@ -110,8 +109,9 @@ async function gameSetup(url) {
 
 
 // event listener to hide goal splash todo: luo tämmönen, kun voittaa/saa vasta-aineen
-// document.querySelector('.goal').addEventListener('click', function (evt) {
-//   evt.currentTarget.classList.add('hide');
+document.querySelector('.goal').addEventListener('click', function (evt) {
+  evt.currentTarget.classList.add('hide');
+})
 
 //blablaa
 //saakeli että menee hermot nyt kyllä kuulkaa
