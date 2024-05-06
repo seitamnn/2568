@@ -43,6 +43,7 @@ function updatePlayerInfo(data){
   currency.innerHTML = data.playerInfo.currency;
   distance.innerHTML = data.playerInfo.alien_distance;
 }
+
 // function to check if the player has the ingredient
 async function checkIngredient (data) {
   if (data.playerInfo.location === "ENGM") {
@@ -56,7 +57,28 @@ async function checkIngredient (data) {
 // function to check if game is over
 function checkGameOver (currency, distance){
   if (currency <= 0 || distance <= 0){
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti({
+      emojis: ['👽'],
+      confettiRadius: 6,
+      confettiNumber: 500,
+    })
     alert(`Game over!`);
+    return false;
+  }
+  return true;
+}
+
+// function to check if game is won
+function checkWin (data){
+  if (data.playerInfo.location === "MUHA" && data.playerInfo.in_possession === 1){
+    const jsConfetti = new JSConfetti()
+    jsConfetti.addConfetti({
+      emojis: ['🌈', '⚡️', '🦄', '✨', '💫', '🌸'],
+      confettiRadius: 6,
+      confettiNumber: 500,
+    })
+    alert(`You WON!`);
     return false;
   }
   return true;
@@ -71,6 +93,7 @@ async function gameSetup(url) {
     console.log(playerInfo);
     updatePlayerInfo(playerInfo); // päivitetään pelaaja tiedot näytölle
     if(!checkGameOver(playerInfo.playerInfo.currency, playerInfo.playerInfo.alien_distance)) return;
+    if(!checkWin(playerInfo)) return;
     await checkIngredient(playerInfo)
 
     const pmarker = L.marker([playerInfo.currentLocation.airport_latitude, playerInfo.currentLocation.airport_longitude]).addTo(map); // pelaajan sijainti kartalle
@@ -105,10 +128,7 @@ async function gameSetup(url) {
   }
 }
 
-
-
-
-// event listener to hide goal splash todo: luo tämmönen, kun voittaa/saa vasta-aineen
+// event listener to hide goal splash
 document.querySelector('.goal').addEventListener('click', function (evt) {
   evt.currentTarget.classList.add('hide');
 })
