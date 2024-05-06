@@ -41,6 +41,7 @@ def fly(id, dest, consumption=0, player=None): #ei käytössä, voi poistaa joll
     json_data = json.dumps(game, default=lambda o: o.__dict__, indent=4)
     return json_data
 
+
 def select_airport(): #valitaan kolme kenttää randomilla
     sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
     cursor = config.conn.cursor()
@@ -62,19 +63,10 @@ def select_airport(): #valitaan kolme kenttää randomilla
          "country_name": three_airports[2][3],
          "longitude": three_airports[2][2],
          "latitude": three_airports[2][1]
-         },
-        {"airport_name": "Oslo Airport, Gardermoen",
-         "country_name": "Norway",
-         "longitude": 11.1004,
-         "latitude": 60.193901
-         },
-        {"airport_name": "José Martí International Airport",
-         "country_name": "Cuba",
-         "longitude": -82.40910339355469,
-         "latitude": 22.989200592041016
          }
     ]
     return airport_choices
+
 
 def player_info(screen_name): #pelaajan tiedot
     sql = (
@@ -121,10 +113,12 @@ def start(screen_name): #tää käyttöön, kun saadaan pelaajan syöttämä nim
     mycursor.fetchall()
     return flyto(screen_name, "José Martí International Airport", 0)
 
+
 def update_possession(screen_name):
     sql = f"UPDATE game SET in_possession = true WHERE screen_name = '{screen_name}'"
     cursor = config.conn.cursor()
     cursor.execute(sql)
+
 
 # http://127.0.0.1:5000/newgame?player=Vesa&loc=EFHK
 @app.route('/newgame') # tää käyttöön kun saadaan pelaajan täyttämä nimi talteen
@@ -143,12 +137,14 @@ def fly_to():
     price = int(args.get("price"))
     return flyto(screen_name, dest, price)
 
+
 @app.route('/ingredient') #päivitetään ainesosa
 def update_in_possession():
     args = request.args
     screen_name = args.get("playerName")
     update_possession(screen_name)
     return player_info(screen_name)
+
 
 @app.route('/player_info/<screen_name>/') # pelaajan tiedot haetaan tällä
 def player_test(screen_name):
