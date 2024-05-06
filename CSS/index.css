@@ -3,10 +3,6 @@
     height: 100%;
 }
 
-main {
-    padding: 1rem 7rem;
-}
-
 .space-evenly {
     justify-content: space-evenly;
 }
@@ -163,8 +159,8 @@ ul {
         font-size: initial;
     }
     #map {
-        width: 40%;
-        height: initial;
+        width: 60%;
+        height: 45rem;
     }
     .boxes {
         width: 60%;
