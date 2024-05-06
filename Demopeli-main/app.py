@@ -67,6 +67,11 @@ def select_airport(): #valitaan kolme kenttää randomilla
          "country_name": "Norway",
          "longitude": 11.1004,
          "latitude": 60.193901
+         },
+        {"airport_name": "José Martí International Airport",
+         "country_name": "Cuba",
+         "longitude": -82.40910339355469,
+         "latitude": 22.989200592041016
          }
     ]
     return airport_choices
