@@ -98,6 +98,7 @@ async function gameSetup(url) {
     await checkIngredient(playerInfo);
 
     const pmarker = L.marker([playerInfo.currentLocation.airport_latitude, playerInfo.currentLocation.airport_longitude]).addTo(map); // pelaajan sijainti kartalle
+    map.flyTo([playerInfo.currentLocation.airport_latitude, playerInfo.currentLocation.airport_longitude], 4);
     airportMarkers.addLayer(pmarker)
     pmarker.bindPopup(`<b>You are here!</b></b><br>Airport: ${playerInfo.currentLocation.airport_name}<br>Country: ${playerInfo.currentLocation.country_name}`); // popup ikkuna missä näkyy sijainnin tiedot
     pmarker.openPopup(); // you are here ikkuna aukee automaattisesti

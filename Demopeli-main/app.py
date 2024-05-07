@@ -30,7 +30,7 @@ config.conn = mysql.connector.connect(
 whenEnoughFlights = 0
 def select_airport():
     global whenEnoughFlights
-    if whenEnoughFlights != 3 and whenEnoughFlights != 5:
+    if whenEnoughFlights != 3 and whenEnoughFlights != 6:
         sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
         cursor = config.conn.cursor()
         cursor.execute(sql)
@@ -53,7 +53,7 @@ def select_airport():
              "latitude": three_airports[2][1]
              }
         ]
-    elif whenEnoughFlights == 3:
+    elif whenEnoughFlights == 2:
         # When enough flights have been made, only Norway should be selectable
         sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Norway'"
         cursor = config.conn.cursor()
