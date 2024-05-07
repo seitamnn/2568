@@ -37,7 +37,8 @@
     .box table {
         width: 100%;
         text-align: center;
-        border: lightgray solid 1px;
+        border: #c7c3c3 solid 1px;
+        color: #800080;
         border-radius: 4px;
     }
 
@@ -59,9 +60,9 @@
         margin: 0 0 1rem 0;
     }
 
-    .button {
+    #find-cow-button {
         cursor: pointer;
-        background-color: lightgrey;
+        background-color:lightgray;
     }
 
     header {
