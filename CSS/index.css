@@ -10,6 +10,7 @@
 #key {
     height: 50px;
     width: 50px;
+    padding-left: 3em;
 }
 
 .container {
@@ -18,9 +19,9 @@
 }
 
 .page-header {
-    background: linear-gradient(to bottom, #430559, #dd32ef);
+    background: linear-gradient(to bottom, #430559, #282b85);
     padding: 0;
-    height: fit-content;
+    height:7em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,7 +30,7 @@
     text-align: center;
     font-size: xxx-large;
     color: lightgray;
-    padding-left: 7.5rem;
+    padding-left: 14rem;
 }
 
 .page-footer {
@@ -45,31 +46,35 @@ ul {
 }
 
 .boxes {
-    width: 60%;
+    width: 40%;
 }
 
 .box {
-    padding: 1rem;
+    padding: 0;
     font-size: x-small;
     color: #0a0a0a;
-    background-color: grey;
 }
-
+#gamestat {
+    margin: 5px;
+    padding-left:7em;
+    color: lightgray;
+}
 #map {
     border-radius: 20px;
     box-shadow: rgba(0,0,0,0.3) 3px 3px 10px;
     margin-bottom: 1rem;
     height: 90%;
-    width: 40%;
+    width: 60%;
     overflow: hidden;
 }
 
 .box table {
-    width: 100%;
+    width: 98%;
     text-align: center;
     background-color: lightgray;
     border: whitesmoke solid 1px;
-    border-radius: 2px;
+    border-radius: 10px;
+
 }
 
 .box li {
@@ -159,26 +164,31 @@ ul {
     }
     #map {
         width: 60%;
-        height: 45rem;
+        padding-top: 5px;
+        height: 50rem;
     }
     .boxes {
-        width: 60%;
+        width: 40%;
+        padding-top: 5px;
         padding-left: 1rem;
         box-sizing: border-box;
     }
 }
 
 header {
-    padding: 10px;
+    padding: 11px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 nav {
-    background: linear-gradient(to bottom, #430559, #dd32ef);
+    background: linear-gradient(to bottom, #430559, #282b85);
     color: #fff;
-    padding: 10px;
+    padding: 8px;
+    padding-right: 3em;
+    height: 5em;
+
 }
 
 nav button {
@@ -192,14 +202,15 @@ nav button {
   font-size: 18px;
   font-family: "Oxanium", sans-serif;
   font-style: normal;
-  margin: 10px;
+  margin: 20px;
+    margin-top: 0;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s ease-out, box-shadow 0.3s, color 0.3s;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   outline: none;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
 }
 
 
@@ -227,13 +238,12 @@ nav button {
 
 .button:hover {
   color: white; /* Dark Gray */
-  background-color: #9c22a9;
+  background-color: #8c22a9;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .about:hover,
-.game:hover,
 .help:hover {
   animation: float 2s infinite alternate;
 }
