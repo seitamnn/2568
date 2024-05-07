@@ -2,7 +2,6 @@
 .container-cow {
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(133, 117, 117, 0.7);
     height: 100%;
 
     .cow-header {
@@ -20,12 +19,13 @@
     }
 
     .box {
-        padding: 1rem;
+        padding: 0.5rem;
         font-size: x-small;
         border-radius: 6px;
-        box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px;
+        box-shadow: white 3px 3px 10px;
         margin-bottom: 1rem;
-        background-color: #efeaea;
+        background-color: purple;
+        color: #edb2ed;
     }
 
     .box h2,
@@ -88,7 +88,7 @@
 
         #cow-map {
             width: 60%;
-            height: 25rem;
+            height: 32rem;
             overflow: hidden;
             border-radius: 6px;
             box-shadow: white 3px 3px 10px;
@@ -103,10 +103,13 @@
         }
     }
 }
+#cowDialog {
+    width: 75vw;
+    height: 90vh;
+    color: #edb2ed;
+    border-color: #cd80cd;
+}
 
-
-
-
-
-
-
+button#closeCowBtn {
+    margin-right: 5rem;
+}

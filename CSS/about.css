@@ -9,3 +9,9 @@ img {
     float: right;
 }
 
+#aboutDialog {
+    width: 60vw;
+    height: 60vh;
+    color: #edb2ed;
+    border-color: #cd80cd;
+}
