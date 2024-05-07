@@ -1,7 +1,7 @@
 /* Challenge */
 #open-challenge-btn {
     background: palevioletred;
-    color: white;
+    color: black;
     width: 88%;
     max-width: 600px;
     font-weight: 500;
@@ -14,12 +14,13 @@
     cursor: pointer;
 }
 .app{
-    background: #f0f0f0;
+    background: #8e8b8b;
     width: 88%;
     max-width: 650px;
     margin: 9px auto 0;
     margin-left: 4px;
     border-radius: 9px;
+    border: rgba(51, 46, 46, 0.7) solid 1px;
     padding: 25px;
     display: none; 
 }
@@ -39,7 +40,7 @@
     font-weight: 600;
 }
 .btn{
-    background: white;
+    background: lightgray;
     color: #222;
     font-weight: 500;
     width: 100%;
@@ -53,7 +54,7 @@
 }
 .btn:hover:not([disabled]){ /* Tää et ku on valinnu nii ei tuu hoverii */
     background: #222;
-    color: white;
+    color: lightgray;
 }
 .btn.disabled{
     cursor: no-drop;

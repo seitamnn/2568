@@ -26,6 +26,7 @@
         margin-bottom: 1rem;
         background-color: purple;
         color: #edb2ed;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
     }
 
     .box h2,
@@ -37,7 +38,7 @@
     .box table {
         width: 100%;
         text-align: center;
-        border: #c7c3c3 solid 1px;
+        border: #8e8b8b solid 1px;
         color: #800080;
         border-radius: 4px;
     }
@@ -60,10 +61,7 @@
         margin: 0 0 1rem 0;
     }
 
-    #find-cow-button {
-        cursor: pointer;
-        background-color:lightgray;
-    }
+
 
     header {
         background: linear-gradient(to bottom, #430559, #dd32ef);

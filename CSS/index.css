@@ -22,7 +22,7 @@
 .page-header {
     background: linear-gradient(to bottom, #430559, #282b85);
     padding: 0;
-    height:7em;
+    height:5em;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,10 +55,12 @@ ul {
     font-size: x-small;
     color: #0a0a0a;
 }
-#gamestat {
+#status {
     margin: 5px;
-    padding-left:7em;
-    color: lightgray;
+    padding-left: 7rem;
+    color: #0a0a0a;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-size: xxx-large;
 }
 #map {
     border-radius: 20px;
@@ -72,8 +74,8 @@ ul {
 .box table {
     width: 98%;
     text-align: center;
-    background-color: lightgray;
-    border: whitesmoke solid 1px;
+    background-color: #8e8b8b;
+    border: rgba(51, 46, 46, 0.7) solid 1px;
     border-radius: 10px;
 
 }

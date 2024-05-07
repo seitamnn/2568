@@ -14,4 +14,5 @@ img {
     height: 60vh;
     color: #edb2ed;
     border-color: #cd80cd;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
