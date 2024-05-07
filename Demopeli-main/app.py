@@ -22,7 +22,7 @@ CORS(app)
 # Tietokantayhteys
 config.conn = mysql.connector.connect(
          host=os.environ.get('HOST'),
-         port= 3306,
+         port=3306,
          database=os.environ.get('DB_NAME'),
          user=os.environ.get('DB_USER'),
          password=os.environ.get('DB_PASS'),
@@ -170,7 +170,7 @@ def correct_answer():
 def wrong_answer():
     args = request.args
     screen_name = args.get("playerName")
-    update_currency(screen_name)
+    update_distance(screen_name)
     return player_info(screen_name)
 
 
