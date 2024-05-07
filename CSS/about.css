@@ -15,3 +15,7 @@ img {
     color: #edb2ed;
     border-color: #cd80cd;
 }
+
+#closeAboutBtn {
+    margin-right: 4rem;
+}
