@@ -5,8 +5,8 @@
 const quizzes = [
   {
       title: "At the airport security check, the metal part of the ingredient container causes problems. Container arouses the interest of employees and they start asking you questions about it.You panic, and decide to lie and explain that you're a chemist and that's why you have the container with you. The employees don't fully believe you and they decide to test you.",
-      trueText: "Well done! Now they believe you and you can continue your journey. Although that was close call!",
-      falseText: "Your credibility vanished like ashes in the wind.",
+      trueText: "Well done! Now they believe you and you can continue your journey. Although that was close call! You're rewarded at your next stop!",
+      falseText: "Your credibility vanished like ashes in the wind. Watch your steps the aliens are getting closer at your next stop...",
       questions: [
           {
           question: "What is the chemical symbol of iron?",
@@ -21,8 +21,8 @@ const quizzes = [
   },
   {
       title: "You are in your own thoughts when accidentally bump into strange looking world traveler at the airport. He asks for your help with the currency conversion and you decide to help him. Let's see what kind of problem he has.",
-      trueText: "That's right! The traveler is very grateful and gives you some currency for the effort.",
-      falseText: "Oh no, the traveler fooled you. He was thief who took some currency from your pocket.",
+      trueText: "That's right! The traveler is very grateful. You're rewarded at your next stop!",
+      falseText: "Oh no, the traveler fooled you. Watch your steps the aliens are getting closer at your next stop...",
       questions: [
       {
           question: "How much is 10 euros in yens?",
@@ -37,8 +37,8 @@ const quizzes = [
   },
   {
       title: "You want to reward yourself with a lemonade. You're at the bar when suddenly a child runs in front of you crying and asks for help. She tells you that she has lost her family and can't find them anywhere. You don't have the heart to refuse and you decide to help her. You notice an announcement device near by and it would make it easier to find the child's family. But to use the device you must answer following question correctly.",
-      trueText: "Yes, that's right! Child's family is rather quickly found through the announcement. They are grateful to you and recognize you as a resistance member. The family wants to help you with some ppocket money.",
-      falseText: "Wrong, your geography seems to be rusty! You get back to the bar and notice someone took your sunglasses and cash you left at the table. Now you both are sad.",
+      trueText: "Yes, that's right! Child's family is rather quickly found through the announcement. They are grateful to you and recognize you as a resistance member. You're rewarded at your next stop!",
+      falseText: "Wrong, your geography seems to be rusty! Watch your steps the aliens are getting closer at your next stop...",
       questions: [
       {
           question: "What is the capital of Argentina?",
@@ -54,7 +54,7 @@ const quizzes = [
   {
       title: "You bump into another resistance member. He is skeptical if you are truly part of the resistance and wants to make sure before helping you further. By answering his question correctly, he promise to help you distract the aliens. Hurry up!",
       trueText: "That is correct! You have proved that you're true resistance member.",
-      falseText: "That's not it! I guess you didn't read the lore properly... Well, no help for you this time.",
+      falseText: "That's not it! I guess you didn't read the lore properly... Well, no help for you this time. Watch your steps the aliens are getting closer at your next stop...",
       questions: [
       {
           question: "What is the name of the lead scientist of the resistance?",
@@ -69,8 +69,8 @@ const quizzes = [
   },
   {
       title: "While walking to the next departure gate, one of the airport employee thinks you're a cleaner and asks you to take out pile of trash. You now have to decide whether to play along or tell her that you're not a cleaner. Remember that helping may benefit you, while refusing may cause problems. Or it could be the other way around, who knows... Choose wisely.",
-      trueText: "You take out the trash and the employee thanks you for your help and gives you a tip.",
-      falseText: "Employee apologizes for her mistake but becomes suspicious of you and wants to talk to you for a very long time, before letting you continue your journey. Ughhhh now you need to buy a new ticket...",
+      trueText: "You take out the trash and the employee thanks you for your help and gives you a tip. You're rewarded at your next stop!",
+      falseText: "Employee apologizes for her mistake but becomes suspicious of you and wants to talk to you for a very long time, before letting you continue your journey. Watch your steps the aliens are getting closer at your next stop...",
       questions: [
           {
           question: "So are you going to take the trash out?",
@@ -85,8 +85,8 @@ const quizzes = [
   },
   {
       title: "At the airport check-in one of the employees recognizes you. He looks at you disapprovingly. You notice a pin on his chest. where it says 'END TO PLANET EARTH' He probably recognizes you from the news... Because of the mission you've been on tv a lot lately. What should you do about it?",
-      trueText: "You tried to ignore the situation completely. You keep your eyes on the floor and notice a dollar bill someone dropped. Nice!",
-      falseText: "The bribes was useful and helps you keep a low profile. But now your wallet is a little bit lighter.",
+      trueText: "You tried to ignore the situation completely. You keep your eyes on the floor and notice a dollar bill someone dropped. Nice! You're rewarded at your next stop!",
+      falseText: "The employee doesn't take your suggestion very well... Watch your steps the aliens are getting closer at your next stop...",
       questions: [
           {
           question: "You can either try to bribe him or Ignore the situation as if nothing had happened.",
@@ -99,8 +99,8 @@ const quizzes = [
   },
   {
       title: "Your previous flight landed late due to weather conditions and there's only 15 minutes before your next flight leaves. You are rushing to the next departure gate when you suddenly see alien raid in front of you! There is very little you can do about in this situation, you can try to hide in the nearby trash can.",
-      trueText: "You freeze and seems like you can't move. Suddenly someone pulls you behind a corner. It's one of the resistance members. They give you a lesson about being more careful and gives you some cash. OK MOM i guess...",
-      falseText: "Hurry up, jump in the trash can now! Try to make yourself comfortable and wait for the raid to end.",
+      trueText: "You freeze and seems like you can't move. Suddenly someone pulls you behind a corner. It's one of the resistance members. They give you a lesson about being more careful and gives you some cash. OK MOM i guess... You're rewarded at your next stop!",
+      falseText: "Hurry up, jump in the trash can now! Try to make yourself comfortable and wait for the raid to end.Watch your steps the aliens are getting closer at your next stop...",
       questions: [
           {
           question: "So are you going to hide?",
@@ -182,16 +182,15 @@ document.addEventListener("DOMContentLoaded", function() {
       score++;
       const screen_name= document.querySelector('#player-name').textContent;
       console.log(screen_name);
-      getData(`http://127.0.0.1:5000/wrong_answer?playerName=${screen_name}`);
-      const paska =  getData(`http://127.0.0.1:5000/player_info/${screen_name}/`);
-      console.log(paska);
+      getData(`http://127.0.0.1:5000/correct_answer?playerName=${screen_name}`);
+      questionElement.innerHTML = quizzes[currentQuizIndex].trueText;
       console.log(screen_name);
-      updatePlayerInfo(paska);
     }else {
       selectedBtn.classList.add("incorrect");
       const screen_name= document.querySelector('#player-name').textContent;
       console.log(getData(`http://127.0.0.1:5000/wrong_answer?playerName=${screen_name}`));
       console.log(screen_name);
+      questionElement.innerHTML = quizzes[currentQuizIndex].falseText;
     }
     Array.from(answerButtons.children).forEach(button => {
       if (button.dataset.correct === "true"){
@@ -204,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function showScore(){
     resetState();
-    questionElement.innerHTML = `haista paska`;
     nextButton.innerHTML = "again bitch";
     //nextButton.style.display = "block";
     nextButton.style.display = "none"; // Hide the "Next" button
