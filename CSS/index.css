@@ -118,7 +118,7 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(97, 44, 133, 0.7);
+    background-color: rgba(75, 30, 106, 0.7);
     padding: 50px;
     border-radius: 10px;
     z-index: 9999;
@@ -176,7 +176,7 @@ ul {
     }
 }
 
-header {
+header.page-header {
     padding: 11px;
     display: flex;
     justify-content: space-between;
@@ -184,7 +184,6 @@ header {
 }
 
 nav {
-    background: linear-gradient(to bottom, #430559, #282b85);
     color: #fff;
     padding: 8px;
     padding-right: 3em;
@@ -284,10 +283,13 @@ dialog h1 {
     padding: 1rem;
     justify-content: center;
     text-align: center;
-    position: relative;
 }
 
 dialog {
     background-image: url('/img/2474216.jpg');
 }
 
+dialog header .closeBtnWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
