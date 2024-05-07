@@ -1,4 +1,3 @@
-import json
 import os
 import random
 import uuid
@@ -9,7 +8,6 @@ from flask import Flask, request, Response
 from flask_cors import CORS
 
 import config
-from game import Game
 
 load_dotenv()
 
@@ -28,18 +26,6 @@ config.conn = mysql.connector.connect(
          password=os.environ.get('DB_PASS'),
          autocommit=True
          )
-
-def fly(id, dest, consumption=0, player=None): #ei käytössä, voi poistaa jollei keksi käyttöä
-    if id==0:
-        game = Game(0, dest, consumption, player)
-    else:
-        game = Game(id, dest, consumption)
-    game.location[0].fetchWeather(game)
-    nearby = game.location[0].find_nearby_airports()
-    for a in nearby:
-        game.location.append(a)
-    json_data = json.dumps(game, default=lambda o: o.__dict__, indent=4)
-    return json_data
 
 
 def select_airport(): #valitaan kolme kenttää randomilla
@@ -63,6 +49,16 @@ def select_airport(): #valitaan kolme kenttää randomilla
          "country_name": three_airports[2][3],
          "longitude": three_airports[2][2],
          "latitude": three_airports[2][1]
+         },
+        {"airport_name": "Oslo Airport, Gardermoen",
+         "country_name": "Norway",
+         "longitude": 11.1004,
+         "latitude": 60.193901
+         },
+        {"airport_name": "José Martí International Airport",
+         "country_name": "Cuba",
+         "longitude": -82.40910339355469,
+         "latitude": 22.989200592041016
          }
     ]
     return airport_choices
@@ -171,11 +167,6 @@ def wrong_answer():
     args = request.args
     screen_name = args.get("playerName")
     update_distance(screen_name)
-    return player_info(screen_name)
-
-
-@app.route('/player_info/<screen_name>/') # pelaajan tiedot haetaan tällä
-def player_test(screen_name):
     return player_info(screen_name)
 
 

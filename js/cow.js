@@ -1,4 +1,5 @@
 'use strict';
+// cow-button
 
 (() => {
   const dialog = document.getElementById('cowDialog');
