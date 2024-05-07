@@ -30,7 +30,7 @@ config.conn = mysql.connector.connect(
 whenEnoughFlights = 0
 def select_airport():
     global whenEnoughFlights
-    if whenEnoughFlights != 2 and whenEnoughFlights != 4:
+    if whenEnoughFlights != 3 and whenEnoughFlights != 6:
         sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
         cursor = config.conn.cursor()
         cursor.execute(sql)
