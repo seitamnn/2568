@@ -27,40 +27,58 @@ config.conn = mysql.connector.connect(
          autocommit=True
          )
 
-
-def select_airport(): #valitaan kolme kenttää randomilla
-    sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
-    cursor = config.conn.cursor()
-    cursor.execute(sql)
-    airports = cursor.fetchall()
-    three_airports = random.sample(airports, 3)
-    airport_choices = [
-        {"airport_name": three_airports[0][0],
-         "country_name": three_airports[0][3],
-         "longitude": three_airports[0][2],
-         "latitude": three_airports[0][1]
-         },
-        {"airport_name": three_airports[1][0],
-         "country_name": three_airports[1][3],
-         "longitude": three_airports[1][2],
-         "latitude": three_airports[1][1]
-         },
-        {"airport_name": three_airports[2][0],
-         "country_name": three_airports[2][3],
-         "longitude": three_airports[2][2],
-         "latitude": three_airports[2][1]
-         },
-        {"airport_name": "Oslo Airport, Gardermoen",
-         "country_name": "Norway",
-         "longitude": 11.1004,
-         "latitude": 60.193901
-         },
-        {"airport_name": "José Martí International Airport",
-         "country_name": "Cuba",
-         "longitude": -82.40910339355469,
-         "latitude": 22.989200592041016
-         }
-    ]
+whenEnoughFlights = 0
+def select_airport():
+    global whenEnoughFlights
+    if whenEnoughFlights != 2 and whenEnoughFlights != 4:
+        sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country"
+        cursor = config.conn.cursor()
+        cursor.execute(sql)
+        airports = cursor.fetchall()
+        three_airports = random.sample(airports, 3)
+        airport_choices = [
+            {"airport_name": three_airports[0][0],
+             "country_name": three_airports[0][3],
+             "longitude": three_airports[0][2],
+             "latitude": three_airports[0][1]
+             },
+            {"airport_name": three_airports[1][0],
+             "country_name": three_airports[1][3],
+             "longitude": three_airports[1][2],
+             "latitude": three_airports[1][1]
+             },
+            {"airport_name": three_airports[2][0],
+             "country_name": three_airports[2][3],
+             "longitude": three_airports[2][2],
+             "latitude": three_airports[2][1]
+             }
+        ]
+    elif whenEnoughFlights == 2:
+        # When enough flights have been made, only Norway should be selectable
+        sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Norway'"
+        cursor = config.conn.cursor()
+        cursor.execute(sql)
+        norwayAirport = cursor.fetchall()
+        airport_choices = [
+            {"airport_name": norwayAirport[0][0],
+             "country_name": norwayAirport[0][3],
+             "longitude": norwayAirport[0][2],
+             "latitude": norwayAirport[0][1]
+             }
+        ]
+    else:
+        # When enough flights have been made, only Norway should be selectable
+        sql = f"SELECT airport.name, airport.latitude_deg, airport.longitude_deg, country.name FROM airport JOIN country ON airport.iso_country = country.iso_country WHERE country.name = 'Cuba'"
+        cursor = config.conn.cursor()
+        cursor.execute(sql)
+        cubaAirport = cursor.fetchall()
+        airport_choices = [
+            {"airport_name": cubaAirport[0][0],
+             "country_name": cubaAirport[0][3],
+             "longitude": cubaAirport[0][2],
+             "latitude": cubaAirport[0][1]
+             }
+        ]
     return airport_choices
 
 
@@ -91,12 +109,14 @@ def player_info(screen_name): #pelaajan tiedot
     return status
 
 
-def flyto(screen_name, dest, price): #lennetään
+def flyto(screen_name, dest, price):
+    global whenEnoughFlights
     sql2 = f"UPDATE game SET location = (SELECT ident FROM airport WHERE name = '{dest}') WHERE screen_name = '{screen_name}';"
     cursor = config.conn.cursor()
     cursor.execute(sql2)
     sql3 = f"UPDATE game SET currency = currency - '{price}' WHERE screen_name = '{screen_name}'"
     cursor.execute(sql3)
+    whenEnoughFlights += 1
     return player_info(screen_name)
 
 
