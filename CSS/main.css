@@ -22,34 +22,3 @@ main {
         padding: 1rem 2rem;
 }
 
-.dialog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    background: linear-gradient(to bottom, #430559, #dd32ef);
-    border-bottom: 1px solid #0a0a0a;
-}
-
-.dialog-header h1 {
-    margin: 0;
-    font-size: 4em;
-}
-
-.dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #0a0a0a;
-    background-color: #fff;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-    z-index: 1000;
-    display: none;
-}
-
-.dialog.show {
-    display: block;
-}

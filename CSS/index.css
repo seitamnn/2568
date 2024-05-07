@@ -266,3 +266,16 @@ canvas {
     position: absolute;
     pointer-events: none;
 }
+
+dialog h1 {
+    display: flex;
+    background: linear-gradient(to bottom, #430559, #dd32ef);
+    padding: 1rem;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+dialog {
+    background-image: url('/img/2474216.jpg');
+}
